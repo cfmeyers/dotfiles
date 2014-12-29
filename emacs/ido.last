@@ -1,0 +1,144 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/collin/.emacs.d/cfm-elisp-dir/" . "exec-path-from-shell/")
+ ("/Users/collin/Dropbox/org/phys/" . "fc/")
+ ("/Users/collin/dev/cryptography/" . "enigmaTest/")
+ ("/Users/collin/dev/" . "cryptography/")
+ ("/Users/collin/.emacs.d/snippets/" . "java/")
+ ("/Users/collin/.emacs.d/" . "auto-save-list/")
+ ("/Users/collin/Dropbox/org/" . "phys/")
+ ("/Users/collin/Dropbox/" . "org/")
+ ("/Users/collin/org/" . "phys/")
+ ("/Users/collin/Desktop/phys/" . "fc/")
+ ("/Users/collin/Desktop/" . "enigma/")
+ ("/Users/collin/" . "Dropbox/")
+ ("/Users/" . "collin/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/collin/Dropbox/org/phys/"
+ "/Users/collin/Dropbox/org/crypto/"
+ "/Users/collin/dev/cryptography/enigmaTest/"
+ "/Users/collin/dev/cryptography/enigmaV2/"
+ "/Users/collin/dev/cryptography/shenigma2/"
+ "/Users/collin/dev/cryptography/java_enigma/"
+ "/Users/collin/dev/cryptography/shenigma/"
+ "/Users/collin/Dropbox/org/phys/fc/"
+ "/Users/collin/.emacs.d/snippets/java/"
+ "/Users/collin/dev/cryptography/langrec/"
+ "/Users/collin/dev/cryptography/py_enigma/"
+ "/Users/collin/Desktop/enigma/"
+ "/Users/collin/.emacs.d/snippets/org-mode/"
+ "/Users/collin/Desktop/phys/fc/"
+ "/Users/collin/org/phys/"
+ "/Users/collin/org/"
+ "/Users/collin/.emacs.d/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "physics.org"
+ "enigma-notes.org"
+ "inputScript.sh"
+ "MainNonKDB.java"
+ "TestPlugExpander.java"
+ "Main.java"
+ "test.txt"
+ "difference.txt"
+ "protoPlugs.py"
+ "Filters.java"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/collin/.emacs.d/" (21645 7428 0 0) "snippets/" "projectile-bookmarks.eld" "plugins/" "init.el~" "init.el" "image-dired/" "ido.last~" "ido.last" "eshell/" "elpa/" "cfm-elisp-dir/" "bookmarks" "auto-save-list/" "ac-comphist.dat" "ac/" "../" "./")
+
+ ("/Users/collin/dev/cunyfirst_papi/db/" (21544 64145 0 0) "test.sqlite3" "seeds.rb" "schema.rb" "QCScheduleFall2014.csv" "migrate/" "development.sqlite3" "../" "./")
+
+ ("/Users/collin/dev/cunyfirst_papi/spec/requests/" (21542 42418 0 0) "sections_spec.rb" "institutions_spec.rb" "departments_spec.rb" "courses_spec.rb" "../" "./")
+
+ ("/Users/collin/.emacs.d/snippets/ruby-mode/" (21498 35037 0 0) "rspec-it-string-assertion.yasnippet" "rspec-it-assertion.yasnippet" "rspec-describe.yasnippet" "interpolate.yasnippet" ".yas-compiled-snippets.el" "../" "./")
+
+ ("/Users/collin/.emacs.d/snippets/rhtml-mode/" (21495 55239 0 0) "interpolate.yasnippet" "form-for.yasnippet" "end.yasnippet" "bracket-percentage.yasnippet" "bracket-equals.yasnippet" ".yas-compiled-snippets.el" "../" "./")
+
+ ("/Users/collin/classes/ruby/sample_app/app/assets/stylesheets/" (21494 40765 0 0) "static_pages.css.scss" "custom.css.scss" "application.css" "../" "./")
+
+ ("/Users/collin/classes/ruby/my_blog_2/app/views/posts/" (21484 58987 0 0) "show.html.erb" "new.html.erb" "index.html.erb" "../" "./")
+
+ ("/Users/collin/.emacs.d/cfm-elisp-dir/exec-path-from-shell/" (21484 50954 0 0) "README.md" "exec-path-from-shell.el" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/collin/.emacs.d/cfm-elisp-dir/" (21484 50953 0 0) "smartparens/" "lorem-ipsum.el" "highlight-indentation.el" "exec-path-from-shell/" "edit-server.el" "../" "./")
+
+ ("/Users/collin/classes/ruby/blog/config/" (21483 25475 0 0) "secrets.yml" "routes.rb" "locales/" "initializers/" "environments/" "environment.rb" "database.yml" "boot.rb" "application.rb" "../" "./")
+
+ ("/Users/collin/classes/ruby/soup_to_bits/app/views/categories/" (21480 41262 0 0) "index.html.erb" "../" "./")
+
+ ("/Users/collin/classes/ruby/soup_to_bits/app/models/" (21480 33789 0 0) "soup.rb" "concerns/" "category.rb" ".keep" ".#soup.rb" "#soup.rb#" "../" "./")
+
+ ("/Users/collin/classes/ruby/soup_to_bits/config/" (21480 32971 0 0) "secrets.yml" "routes.rb" "locales/" "initializers/" "environments/" "environment.rb" "database.yml" "boot.rb" "application.rb" ".#routes.rb" "#routes.rb#" "../" "./")
+
+ ("/Users/collin/Dropbox/org/unix/" (21351 2166 0 0) "unix.org" "test.sh" "../" "./")
+
+ ("/Users/collin/Dropbox/org/crypto/" (21350 62894 0 0) "ltxpng/" "fc/" "enigma-notes.org" "cryptoPS2.org" "crypto.org" ".DS_Store" "../" "./")
+
+ ("/Users/collin/dev/cryptography/java_enigma/" (21332 18688 0 0) "zeroplugs.txt" "test.txt" "StringExamples.pyc" "StringExamples.py" "SortedRotorOnlyVariance.txt" "RotorOnlyVariance.txt" "Rotor.java" "Reflector.java" "pyNoPlugs.pyc" "pyNoPlugs.py" "protoPlugs.pyc" "protoPlugs.py" "PlugGenerator.java" "PlugChooser.java" "PlugBoard.java" "NoPlugs.java" "Mask.java" "MainMark.java" "MainJonathan.java" "Main.java" "kdbxfm.txt" "kdbPlugSettings.txt" "generateAllCombos.java" "FreqCountUtil.java" "EnigmaMachine.java" "EMTest.java" "difference.txt" "data.dat" "cl_enigma.java" "CausalStats.txt" "allDigraphs.txt" "../" "./")
+
+ ("/Users/collin/dev/cryptography/shenigma2/" (21332 4882 0 0) "wc" "TestPlugExpander.java" "TestPlugExpander.class" "Rotor.java" "Rotor.class" "Reflector.java" "Reflector.class" "PlugBoard.java" "PlugBoard.class" "OUTLowVariance1C.txt" "Main.java" "Main.class" "LowVariance1C.txt" "FreqCountUtil.java" "FreqCountUtil.class" "EnigmaMachine.java" "EnigmaMachine.class" "../" "./")
+
+ ("/Users/collin/dev/cryptography/enigmaTest/" (21331 63029 0 0) "two.txt" "Rotor.java" "Rotor.class" "Reflector.java" "Reflector.class" "PlugBoard.java" "PlugBoard.class" "OUTLowVariance1C.txt" "one.txt" "MainNonKDB.java" "MainNonKDB.class" "LowVariance1C.txt" "inputScript.sh" "FreqCountUtil.java" "FreqCountUtil.class" "Filters.java" "Filters.class" "F2OUTLowVariance1C.txt" "EnigmaMachine.java" "EnigmaMachine.class" "../" "./")
+
+ ("/Users/collin/Dropbox/org/phys/" (21345 50007 0 0) "textbook/" "physimg/" "physics.tex" "physics.pdf" "physics.org" "ltxpng/" "fc/" ".DS_Store" "../" "./")
+
+ ("/Users/collin/.emacs.d/auto-save-list/" (21345 44793 0 0) ".saves-43023-localhost~" ".saves-34413-localhost~" "../" "./")
+
+ ("/Users/collin/Dropbox/org/" (21345 25598 0 0) "todo/" "phys/" "math/" "crypto/" ".DS_Store" "../" "./")
+
+ ("/Users/collin/" (21345 40055 0 0) "tmp/" "test.png" "tdaemon/" "src/" "sites/" "setuptools-2.0.2.tar.gz" "Qt5.1.1/" "Public/" "Pictures/" "pbcopy" "octopress-tag-pages/" "numpy.sh" "npm-debug.log" "nltk_data/" "Music/" "Movies/" "linecount.txt" "Library/" "google-cloud-sdk/" "Google Drive/" "flask/" "filenames.txt" "ez_setup.py" "ec2-api-tools.zip" "Dropbox/" "Downloads/" "dotfiles/" "Documents/" "dev/" "Desktop/" "classes/" "cfmeyers@dreamhost.com" "cert_file" "Brow/" "aws-keys/" "assets/" "Applications/" ":q" ".zshrc" ".zsh_history" ".zsh-update" ".zprofile.pysave" ".zprofile" ".zcompdump-localhost-5.0.2.localhost.2128" ".zcompdump-Justinian-5.0.2" ".zcompdump-justinian-4.3.11" ".zcompdump-Justinian (2)-5.0.2" ".zcompdump--5.0.2" ".zcompdump" ".z.yRR3Ax" ".z.WA5zCZ" ".z.W9hzV8" ".z.thAfmI" ".z.R1WhO3" ".z.otNhzN" ".z.NR5ojZ" ".z.mvGEXP" ".z.LLajD1" ".z.hgeETQ" ".z.C9NNyn" ".z.AzFCne" ".z.9806" ".z.9066" ".z.86BO3y" ".z.8239" ".z.7222" ".z.6904" ".z.6404" ".z.6366" ".z.6167" ".z.5092" ".z.4IdPCE" ".z.4684" ".z.4281" ".z.4202" ".z.4141" ".z.4114" ".z.3304" ".z.32544" ".z.31899" ".z.31776" ".z.31665" ".z.30596" ".z.2hNL4v" ".z.2BVPFD" ".z.29952" ".z.28437" ".z.27778" ".z.26584" ".z.23394" ".z.22930" ".z.22754" ".z.2259" ".z.21861" ".z.21486" ".z.21225" ".z.21079" ".z.20909" ".z.16389" ".z.15643" ".z.1462" ".z.13832" ".z.1317" ".z.12812" ".z.1271" ".z.12631" ".z" ".Xauthority" ".virtualenvs/" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".tmux.conf" ".subversion/" ".ssh/" ".sqlite_history" ".saves/" ".rvm/" ".rstudio-desktop/" ".rnd" ".Rhistory" ".qgis2/" ".profile" ".pip/" ".phet/" ".oh-my-zsh/" ".npm/" ".netrc" ".mysql_history" ".mplayer/" ".matplotlib/" ".MacOSX/" ".local/" ".lighttable/" ".lesshst" ".julia_history" ".julia/" ".irssi/" ".ipython/" ".inputrc" ".htoprc" ".howdoi/" ".gitconfig" ".gem/" ".flexlmrc" ".emacs.d/" ".dvdcss/" ".DS_Store" ".dropbox-master/" ".dropbox/" ".distlib/" ".cups/" ".config/" ".codeintel/" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_profile.backup" ".bash_profile" ".bash_history" ".adobe/" "../" "./")
+
+ ("/Users/collin/Dropbox/" (21342 38970 0 0) "whereStuffIs.md" "visa_citiforward_warranty_info" "videos/" "todo/" "toBeUploaded/" "text/" "templates/" "st/" "Public/" "Prices for Stuff.xlsx" "pics/" "p2b.py~" "p2b.py" "org/" "notesy/" "newPhone~" "MusicBackup/" "meyers-5.lsp" "Icon
+" "grandma/" "giantSteps2.txt" "emailBak/" "ed/" "Camera Uploads/" "cable_modem.txt" "bsgs.py" "4301_46th_St_Apartment_Layout.odg" ".DS_Store" ".dropbox.cache/" "../" "./")
+
+ ("/Users/collin/dev/cryptography/" (21330 51371 0 0) "vig.txt" "test1.png" "test.py" "shenigma2/" "shenigma/" "py_enigma/" "ps2/" "ps1/" "p51.txt" "p5.txt" "p5.py" "p4.py" "p3A.py" "p1A.py" "modular_math.py~" "modular_math.pyc" "modular_math.py" "langrec/" "java_enigma/" "guess_character.pyc" "guess_character.py" "giantSteps2.txt" "giantSteps.txt" "freq_grapher.pyc" "freq_grapher.py" "enigmaV2/" "enigmaTest/" "enigmaAmazon/" "diffie_helman_sim.py" "char_counter.pyc" "char_counter.py" "bsgs.py" ".DS_Store" "../" "./")
+
+ ("/Users/collin/dev/cryptography/enigmaV2/" (21330 49779 0 0) "Rotor.java" "Rotor.class" "Reflector.java" "Reflector.class" "PlugBoard.java" "PlugBoard.class" "MainNonKDB.java" "MainNonKDB.class" "LowVariance1C.txt" "FreqCountUtil.java" "FreqCountUtil.class" "Filters.java" "Filters.class" "EnigmaMachine.java" "EnigmaMachine.class" "../" "./")
+
+ ("/Users/collin/dev/cryptography/shenigma/" (21328 3820 0 0) "RunFilter2.java" "RunFilter2.class" "Rotor.java" "Rotor.class" "Reflector.java" "Reflector.class" "PlugBoard.java" "PlugBoard.class" "OUTLowVariance1CWithDecrypts.txt" "OUTLowVariance1C.txt" "Main.class" "LowVariance1C.txt" "FreqCountUtil.java" "FreqCountUtil.class" "Filters.java" "Filters.class" "F2OUTLowVariance1C.txt" "EnigmaMachine.java" "EnigmaMachine.class" "../" "./")
+
+ ("/Users/collin/.emacs.d/snippets/org-mode/" (21315 13333 0 0) "set-notation-latex.yasnippet" "scientific-notation-latex.yasnippet" "orgmode-italics.yasnippet" "orgmode-image.yasnippet" "orgmode-html-em.yasnippet" "orgmode-html-break.yasnippet" "orgmode-bold.yasnippet" "math-latex.yasnippet" "lv.yasnippet" "latex-vector.yasnippet" "latex-pfrac.yasnippet" "il-latex.yasnippet" "il-latex-vector.yasnippet" "il-latex-congruence.yasnippet" "frac.yasnippet" "eulerphi-latex.yasnippet" "equations-latex.yasnippet" "emf-latex.yasnippet" "congruence-latex.yasnippet" "cloze.yasnippet" "anki-latex.yasnippet" "anki-equations-latex.yasnippet" ".yas-compiled-snippets.el" "../" "./")
+
+ ("/Users/collin/dev/cryptography/py_enigma/" (21305 20349 0 0) "README.md" "LICENSE" "enigma_string_lib.pyc" "enigma_string_lib.py" "enigma_data.pyc" "enigma_data.py" "enigma.py" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/collin/dev/cryptography/langrec/" (21308 43558 0 0) "README.md" "mask.java" "langRecTest.java" "gibberishLibrary.java" "gibberish.py" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/collin/.emacs.d/snippets/java/" (21315 13333 0 0) "java-foreach.yasnippet" ".yas-compiled-snippets.el" "../" "./")
+
+ ("/Users/collin/Dropbox/org/phys/fc/" (21320 64504 0 0) "physFC_25_to_29.org" "physFC_21_to_24.org" "physFC.org" "cloze.md" "calcdeck.md" ".DS_Store" "../" "./")
+
+ ("/Users/collin/.emacs.d/elpa/" (21309 6219 0 0) "zenburn-theme-20140227.455/" "yasnippet-20140227.703/" "undo-tree-20140110.616/" "key-chord-20080915.2156/" "java-snippets-20140206.1831/" "goto-chg-20131228.1459/" "evil-nerd-commenter-20140204.1713/" "evil-leader-20140307.1304/" "evil-20140228.248/" "auctex-readme.txt~" "auctex-readme.txt" "auctex-latexmk-readme.txt~" "auctex-latexmk-readme.txt" "auctex-11.87.3/" "archives/" "../" "./")
+
+ ("/Users/collin/.emacs.d/elpa/java-snippets-20140206.1831/" (21309 6224 0 0) "snippets/" "java-snippets.elc" "java-snippets.el" "java-snippets-pkg.elc" "java-snippets-pkg.el" "java-snippets-autoloads.el" "../" "./")
+
+ ("/Users/collin/.emacs.d/snippets/" (21309 5772 0 0) "org-mode/" "java/" "../" "./")
+
+ ("/Users/collin/dev/" (21307 64821 0 0) "tutorials/" "scripts/" "sand/" "logbook/" "lb/" "flask-todo/" "fl_book_of_sand/" "fatbaby/" "cryptography/" "bones/" "api_factory/" "apartment/" ".DS_Store" "../" "./")
+
+ ("/Users/collin/Desktop/enigma/" (21299 8565 0 0) "Rotor.java" "Rotor.class" "Reflector.java" "Reflector.class" "PlugBoard.java" "PlugBoard.class" "Keyboard.java" "Keyboard.class" "EnigmaPanel.java" "EnigmaPanel.class" "EnigmaApp.java" "EnigmaApp.class" "enigma.html" "Connection.java" "Connection.class" "AppControls.java" "AppControls.class" "../" "./")
+
+ ("/Users/collin/Desktop/" (21302 14717 0 0) "physvids/" "physVideoMagnetism/" "Physics 146 appendices.pdf" "phys/" "LaylaGrace/" "Lab  9.146- force on a current-carrying wire.pdf" "Lab  8.146- magnetic field.pdf" "GaranArticlesPSDsPics/" "forGrandma/" "enigma.zip" "enigma/" "das-season-1 2/" "cesarpics/" "babyshowervids/" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/collin/Desktop/phys/fc/" (21280 52271 0 0) "test.csv" "phys23.md~" "phys23.md" "phys22.md" "phys21.md" "phys.org~" "phys.org" "md_latex_ankiequations.sublime-snippet" "cloze.md~" "cloze.md" "calcdeck.md" "../" "./")
+
+ ("/Users/collin/Desktop/phys/" (21272 57154 0 0) "Syllabus146Spring2014_rv1.pdf" "PhysicsSyllabus2.pdf" "PhysicsSyllabus.pdf" "Lecture4.pdf" "Lecture3.pdf" "Lecture2Physics.pdf" "Lecture2.pdf" "Lecture1Physics.pdf" "fc/" ".DS_Store" "../" "./")
+
+ ("/Users/collin/org/phys/" (21275 65251 0 0) "physimg/" "physics.org~" "physics.org" "ltxpng/" "../" "./")
+
+ ("/Users/collin/org/" (21276 280 0 0) "phys/" "cryptoPS2.org~" "cryptoPS2.org" "crypto.org" "crypo.org" ".DS_Store" ".#crypto.org" "../" "./")
+
+ ("/Users/" (21094 56623 0 0) "Shared/" "collin/" ".localized" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

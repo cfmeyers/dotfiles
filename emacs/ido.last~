@@ -1,0 +1,48 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/collin/org/" . "phys/")
+ ("/Users/collin/Desktop/phys/" . "fc/")
+ ("/Users/collin/Desktop/" . "phys/")
+ ("/Users/collin/" . "org/")
+ ("/Users/" . "collin/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/collin/org/phys/"
+ "/Users/collin/org/"
+ "/Users/collin/.emacs.d/"
+ "/Users/collin/Desktop/phys/fc/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "physics.org"
+ "crypto.org"
+ "init.el"
+ "phys23.md"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/collin/org/phys/" (21275 65251 0 0) "physimg/" "physics.org~" "physics.org" "ltxpng/" "../" "./")
+
+ ("/Users/collin/org/" (21276 280 0 0) "phys/" "cryptoPS2.org~" "cryptoPS2.org" "crypto.org" "crypo.org" ".DS_Store" ".#crypto.org" "../" "./")
+
+ ("/Users/collin/" (21275 65284 0 0) "tmp/" "test.png" "tdaemon/" "src/" "sites/" "setuptools-2.0.2.tar.gz" "Qt5.1.1/" "Public/" "Pictures/" "org/" "octopress-tag-pages/" "numpy.sh" "npm-debug.log" "Music/" "Movies/" "Library/" "googlemusic-hotkeys/" "Google Drive/" "flask/" "ez_setup.py" "Dropbox/" "Downloads/" "dotfiles/" "Documents/" "dev/" "Desktop/" "classes/" "cfmeyers@dreamhost.com" "cert_file" "Brow/" "assets/" "Applications/" ":q" ".zshrc" ".zsh_history" ".zsh-update" ".zprofile.pysave" ".zprofile" ".zcompdump-localhost-5.0.2.localhost.2128" ".zcompdump-Justinian-5.0.2" ".zcompdump-justinian-4.3.11" ".zcompdump--5.0.2" ".zcompdump" ".z.yRR3Ax" ".z.WA5zCZ" ".z.W9hzV8" ".z.thAfmI" ".z.R1WhO3" ".z.otNhzN" ".z.NR5ojZ" ".z.mvGEXP" ".z.LLajD1" ".z.hgeETQ" ".z.C9NNyn" ".z.AzFCne" ".z.9806" ".z.9166" ".z.9066" ".z.86BO3y" ".z.8239" ".z.7722" ".z.7222" ".z.6904" ".z.6404" ".z.6366" ".z.6167" ".z.5092" ".z.4IdPCE" ".z.4684" ".z.4281" ".z.4202" ".z.4141" ".z.4114" ".z.3347" ".z.3304" ".z.32544" ".z.31899" ".z.31776" ".z.31665" ".z.31151" ".z.30596" ".z.2hNL4v" ".z.2BVPFD" ".z.29952" ".z.28437" ".z.27778" ".z.27760" ".z.26584" ".z.26008" ".z.24911" ".z.23699" ".z.23394" ".z.22930" ".z.22754" ".z.2259" ".z.22236" ".z.21861" ".z.21486" ".z.21225" ".z.21079" ".z.20909" ".z.17278" ".z.16389" ".z.15643" ".z.1462" ".z.13832" ".z.1317" ".z.12812" ".z.1271" ".z.12631" ".z.12597" ".z.11589" ".z" ".Xauthority" ".virtualenvs/" ".vimrc" ".viminfo" ".vim/" ".Trash/" ".tmux.conf" ".subversion/" ".ssh/" ".sqlite_history" ".rvm/" ".rstudio-desktop/" ".rnd" ".Rhistory" ".qgis2/" ".profile" ".pip/" ".phet/" ".oh-my-zsh/" ".npm/" ".netrc" ".mysql_history" ".mplayer/" ".matplotlib/" ".MacOSX/" ".local/" ".lighttable/" ".lesshst" ".julia_history" ".julia/" ".irssi/" ".ipython/" ".inputrc" ".howdoi/" ".gitconfig" ".gem/" ".flexlmrc" ".emacs.d/" ".dvdcss/" ".DS_Store" ".dropbox/" ".distlib/" ".cups/" ".config/" ".codeintel/" ".CFUserTextEncoding" ".cache/" ".bashrc" ".bash_profile" ".bash_history" ".adobe/" "../" "./")
+
+ ("/Users/collin/.emacs.d/" (21266 58991 0 0) "init.el~" "init.el" "ido.last~" "ido.last" "elpa/" "auto-save-list/" "../" "./")
+
+ ("/Users/collin/Desktop/phys/fc/" (21264 59134 0 0) "test.csv" "phys23.md" "phys22.md" "phys21.md" "cloze.md" "calcdeck.md" "../" "./")
+
+ ("/Users/collin/Desktop/phys/" (21264 33848 0 0) "PhysicsSyllabus2.pdf" "PhysicsSyllabus.pdf" "Lecture4.pdf" "Lecture3.pdf" "Lecture2Physics.pdf" "Lecture2.pdf" "Lecture1Physics.pdf" "fc/" ".DS_Store" "../" "./")
+
+ ("/Users/collin/Desktop/" (21266 55026 0 0) "phys/" "niceCameraPics/" "Mou.app/" "LaylaGrace/" "GaranArticlesPSDsPics/" "forGrandma/" "das-season-1 2/" "cesarpics/" "babyshowervids/" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/" (21094 56623 0 0) "Shared/" "collin/" ".localized" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

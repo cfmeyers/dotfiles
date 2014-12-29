@@ -1,0 +1,128 @@
+rake
+rake
+rake
+rake
+rake
+rake
+rake
+rake 
+rake 
+rake 
+rake 
+rake
+rake
+rake
+rake
+rake 
+rake 
+rake 
+rake 
+rake 
+rake 
+rake 
+rake 
+rake 
+rake 
+rake
+rake
+rake 
+rake 
+rake 
+rake
+rake
+rake
+rake 
+rake 
+rake routes
+cd ../..
+cd ..
+rake routes
+rake routes
+ls
+rake
+echo $GEM_HOME
+echo $GEM_HOME
+echo $EDITOR
+clear
+cl
+which rake
+noglob rake routes
+rake db:migrate
+rake routes --trace
+rake routes
+ls
+rails --version
+bundle exec rake routes
+rake routes
+echo $PATH
+which rake
+which rails
+rails 
+which gem
+echo $HOME
+which rvm
+echo $UPDATE_ZSH 
+echo $UPDATEZSH 
+echo $UPDATE_ZSH_DAYS 
+echo $UPDATE_ZSH_DAYS
+printenv
+echo $RUBY_VERSION
+which s
+echo $PATH
+rake
+echo $PATH
+rake routes
+which bundler
+which bundler
+bundle exec rake routes
+rake routes
+which gem
+echo $PATH
+bundle exec rake routes
+gem list
+ruby --version
+gem list | wc -l
+which rvm
+rake routes
+rails s
+rails generate model Comment commenter:string body:text post:references
+rake db:migrate
+rails g controller Comments
+find-file comments_controller.rb
+ls 
+(find-file"show.html.erb") 
+(find-file show.html.erb)
+ls
+tree
+cd..
+cd ..
+cd ..
+cd ..
+tree
+rails console 
+cd 
+cd../..
+cd ..
+rspec spec/requests/static_pages_spec.rb 
+gemset use rails4-0
+rvm gemset use rails4-0
+rvm gemset name
+rvm gemset use
+rvm gemset use rails4-0
+rails --version
+rvm gemset name
+rvm gemset use rails4-0
+cd
+cd classes/ruby/sample_app/
+clear
+which rvm
+rvm gemset name
+rvm gemset use rails4-0
+rvm -v
+rvm gemset
+rvm gemset name
+rvm gemset use
+rvm gemset rails4-0
+rvm gemset name
+rvm gemset use rails4-0
+rake

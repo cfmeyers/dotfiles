@@ -1,0 +1,152 @@
+;;;; this loads the package manager
+
+(require 'package)
+
+(add-to-list 'package-archives
+    '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
+;;;loads packages and initializes them
+(package-initialize)
+
+(require 'evil)
+(require 'org)
+
+(define-key evil-normal-state-map "H" 'evil-first-non-blank)
+(define-key evil-visual-state-map "H" 'evil-first-non-blank)
+
+(define-key evil-normal-state-map "L" 'evil-end-of-line)
+(define-key evil-visual-state-map "L" 'evil-end-of-line)
+
+(define-key evil-normal-state-map "J" 'previous-buffer)
+(define-key evil-normal-state-map "K" 'next-buffer)
+(define-key evil-normal-state-map "gb" 'ido-switch-buffer)
+
+(define-key evil-normal-state-map "gc" 'execute-extended-command)
+(define-key evil-normal-state-map "gk" 'kill-buffer)
+
+(define-key evil-normal-state-map "F" 'ido-find-file)
+
+
+;;Org-mod vim bindings
+(define-key evil-normal-state-map "gml" 'org-preview-latex-fragment)
+(define-key evil-normal-state-map "gmi" 'org-toggle-inline-images)
+
+;; Remap org-mode meta keys for convenience
+;; (mapcar (lambda (state)
+;;     (evil-declare-key state org-mode-map
+;;       (kbd "M-l") 'org-metaright
+;;       (kbd "M-h") 'org-metaleft
+;;       (kbd "M-k") 'org-metaup
+;;       (kbd "M-j") 'org-metadown
+;;       (kbd "M-L") 'org-shiftmetaright
+;;       (kbd "M-H") 'org-shiftmetaleft
+;;       (kbd "M-K") 'org-shiftmetaup
+;;       (kbd "M-J") 'org-shiftmetadown))
+;;   '(normal insert))
+
+
+(define-key evil-normal-state-map "gd" (lambda() (interactive)(find-file "~/.emacs.d/init.el")))
+
+
+(load "auctex.el" nil t t)
+(add-to-list 'exec-path "/usr/local/texlive/2013/bin/universal-darwin")
+
+(setq exec-path (append exec-path '("/usr/texbin")))
+
+
+(require 'key-chord)(key-chord-mode 1) ; turn on key-chord-mode
+
+(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+
+(key-chord-define evil-insert-state-map "uu" (kbd "_"))
+
+(evil-mode t)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; Make org-mode work with files ending in .org
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+
+
+(require 'ido)
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+
+(load-theme 'zenburn t)
+
+(setq org-latex-create-formula-image-program 'dvipng)
+
+;;(setq org-latex-create-formula-image-program 'imagemagick)
+
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((latex . t)))
+
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.8))
+
+
+(add-to-list 'load-path
+              "~/.emacs.d/plugins/yasnippet")
+(require 'yasnippet)
+(yas-global-mode 1)
+
+(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"                 ;; personal snippets
+        ))
+
+
+
+
+;;; esc quits
+
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+
+(setq-default mode-require-final-newline nil);;fix problem with yasnippets inserting line after every snippet
+
+
+(define-key evil-normal-state-map "TAB" 'org-cycle)
+
+(add-hook 'org-mode-hook
+	(lambda ()
+	        (toggle-word-wrap)
+		(toggle-truncate-lines)))
+
+
+(setq inhibit-startup-message t
+  inhibit-startup-echo-area-message t) 
+
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+(global-hl-line-mode +1);;highlight current line
+
+
+(require 'paren);;parenthesis highlighting
+(setq show-paren-style 'parenthesis)
+(show-paren-mode +1)
+
+(electric-pair-mode +1);;automatic pair parenthesis
+
+(set-default-font "Inconsolata")
+(set-face-attribute 'default nil :height 240) ;;set font size at startup
+
+(require 'evil-nerd-commenter)
+(define-key evil-normal-state-map "C" 'evilnc-comment-or-uncomment-lines)
+(define-key evil-visual-state-map "C" 'evilnc-comment-or-uncomment-lines)
+
+
+
+
