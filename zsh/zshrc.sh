@@ -1,9 +1,26 @@
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+
+#unsetopt correct_all 
+unsetopt CORRECT #turn off zsh correct prompt
+# unalias rm #get rid of rm prompt inserted by prezto
+
+source ~/.secret_config
+
 # ZSH config Aliases
 alias zshconfig="vim ~/dotfiles/zsh/zshrc.sh"
 alias zconfig="vim ~/dotfiles/zsh/zshrc.sh"
 alias zshreload="source ~/.zshrc; echo sourcing zshrc!"
 alias zreload="source ~/.zshrc; echo sourcing zshrc!"
 alias reload="source ~/.zshrc; echo sourcing zshrc!"
+alias vconfig="vim ~/dotfiles/vim/vimrc.vim"
+alias cd..="cd .."
+alias vi="vim"
+
+
 
 
 #Misc Aliases
@@ -31,11 +48,12 @@ alias get_backbone="bash ~/dev/scripts/bash/download_backbone_pack.sh"
 
 ##PATH
 
-PATH="$HOME/.rbenv/bin:$PATH"                              # RBENV
 PATH="/usr/local/share/npm/bin:$PATH"                      # NPM
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"                # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                        # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"      # Coreutils
+PATH="$HOME/.rbenv/bin:$PATH"                              # RBENV
+
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
 

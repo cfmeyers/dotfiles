@@ -84,6 +84,7 @@ brew cask install dropbox
 #brew cask install caffeine
 brew cask install karabiner
 brew cask install seil
+brew cask install vlc
 
 
 #brew cask alfred link #enable launch from alfred
