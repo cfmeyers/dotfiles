@@ -21,7 +21,8 @@ alias vconfig="vim ~/dotfiles/vim/vimrc.vim"
 alias cd..="cd .."
 alias vi="vim"
 
-
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 
 #Misc Aliases

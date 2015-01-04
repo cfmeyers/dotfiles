@@ -58,6 +58,9 @@ set autoread " If a file is changed outside of vim, automatically reload it with
 " imap jj <Esc>
 imap jk <Esc>
 imap kj <Esc>
+imap aa @
+imap uu _
+imap hh #
 nnoremap L $
 vnoremap L $
 nnoremap H 0
