@@ -9,6 +9,7 @@ unsetopt CORRECT #turn off zsh correct prompt
 # unalias rm #get rid of rm prompt inserted by prezto
 
 source ~/.secret_config
+alias secret="vim ~/.secret_config"
 
 # ZSH config Aliases
 alias zshconfig="vim ~/dotfiles/zsh/zshrc.sh"

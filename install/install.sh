@@ -1,6 +1,7 @@
 #symlink dotfiles to home directory
 ln -s ~/dotfiles/vim/vimrc.vim ~/.vimrc
 ln -s ~/dotfiles/zsh/zshrc.sh ~/.zshrc
+ln -s ~/dotfiles/karabiner/private.xml /Users/collin/Library/Application\ Support/Karabiner/private.xml
 
 echo 'Installing Homebrew...'
 # piping echo to simulate hitting return in the brew install script

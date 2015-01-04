@@ -1,5 +1,6 @@
 
 execute pathogen#infect()
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -13,6 +14,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4 "number of spaces for autoindenting
 set softtabstop=4
+set t_Co=256
 
 set number "always show line number
 set autoindent
@@ -23,7 +25,9 @@ set hlsearch
 set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
 
 set cursorline " highlight current line
-set cmdheight=1
+hi CursorLine   cterm=NONE ctermbg=8 ctermfg=NONE
+
+set cmdheight=2
 set showtabline=2
 set scrolloff=3
 
@@ -51,7 +55,9 @@ set autoread " If a file is changed outside of vim, automatically reload it with
 
 
 
-imap jj <Esc>
+" imap jj <Esc>
+imap jk <Esc>
+imap kj <Esc>
 nnoremap L $
 vnoremap L $
 nnoremap H 0
@@ -63,10 +69,28 @@ imap <c-l> <space>=><space>
 "fix copy and paste in OS X
 set clipboard=unnamed
 
-nnoremap <leader>r :!rspec spec/spec.rb<cr>
+nnoremap <leader>t :!rspec spec/spec.rb<cr>
 
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  from https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Setup some default ignores
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+  \}
+
+" Use the nearest .git directory as the cwd
+let g:ctrlp_working_path_mode = 'r'
+
+nmap gf :CtrlP<cr>
+
+" Easy bindings for its various modes
+nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>bm :CtrlPMixed<cr>
+nmap gb :CtrlPMRU<cr>
 
 
 
