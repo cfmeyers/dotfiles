@@ -41,7 +41,21 @@
         </autogen>
     </item>
 
+<item>
+    <name>Remap Caps Lock to Hyper with Escape on tap</name>
+    <appendix>OS X doesn't have a Hyper. This maps caps lock (actually F19) to Control + Shift + Option + Command, unless you tap it. Then it sends Escape.</appendix>
 
+    <identifier>caps_lock_to_hyper_or_escape</identifier>
+
+    <autogen>
+        --KeyOverlaidModifier--
+        KeyCode::F19,
+
+        KeyCode::COMMAND_L,
+        ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L | ModifierFlag::CONTROL_L,
+        KeyCode::ESCAPE
+    </autogen>
+</item>
 
 
 
@@ -95,7 +109,22 @@
     </item>
 
 
-
+ <item>
+    <name>Vi Navigation in Preview</name>
+    <identifier>private.preview.vinav</identifier>
+    <only>PREVIEW</only>
+    <uielementrole_not>AXTextField, AXTextArea</uielementrole_not>
+    <modifier_only>
+        ModifierFlag::NONE,
+        ModifierFlag::SHIFT_L | ModifierFlag::NONE,
+        ModifierFlag::SHIFT_R | ModifierFlag::NONE,
+    </modifier_only>
+    <appendix>Navigate using the HJKL keys</appendix>
+    <autogen>__KeyToKey__ KeyCode::J, KeyCode::CURSOR_DOWN</autogen>
+    <autogen>__KeyToKey__ KeyCode::K, KeyCode::CURSOR_UP</autogen>
+    <autogen>__KeyToKey__ KeyCode::H, KeyCode::CURSOR_LEFT</autogen>
+    <autogen>__KeyToKey__ KeyCode::L, KeyCode::CURSOR_RIGHT</autogen>
+  </item>
 
 
 </root>

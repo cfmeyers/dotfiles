@@ -8,8 +8,13 @@ fi
 unsetopt CORRECT #turn off zsh correct prompt
 # unalias rm #get rid of rm prompt inserted by prezto
 
+alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -td $HOME/Dropbox/todo/todo.cfg' #Todo.txt alias
+alias tls='clear; /usr/local/Cellar/todo-txt/2.10/bin/todo.sh -td $HOME/Dropbox/todo/todo.cfg ls' #
+
+
 source ~/.secret_config
 alias secret="vim ~/.secret_config"
+HISTIGNORE="jrnl *"
 
 # ZSH config Aliases
 alias zshconfig="vim ~/dotfiles/zsh/zshrc.sh"
@@ -18,8 +23,16 @@ alias zshreload="source ~/.zshrc; echo sourcing zshrc!"
 alias zreload="source ~/.zshrc; echo sourcing zshrc!"
 alias reload="source ~/.zshrc; echo sourcing zshrc!"
 alias vconfig="vim ~/dotfiles/vim/vimrc.vim"
+
 alias cd..="cd .."
+alias cd...="cd ../.."
+alias cd....="cd ../../.."
 alias vi="vim"
+
+alias transparent="echo -e '\033]50;SetProfile=TransparentCollin\a'"
+alias tra="echo -e '\033]50;SetProfile=TransparentCollin\a'"
+alias opaque="echo -e '\033]50;SetProfile=OpaqueCollin\a'"
+alias op="echo -e '\033]50;SetProfile=OpaqueCollin\a'"
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -31,7 +44,7 @@ alias c="clear"
 alias video="sudo killall VDCAssistant"
 alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
 alias snippets='~/.emacs.d/snippets'
-alias ipython='ipython --no-banner'
+alias c='pygmentize -O style=monokai -f console256 -g'
 
 #TrueCrypt Aliases
 alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
@@ -47,6 +60,9 @@ alias crypto="python ~/dev/scripts/octopress/newCryptographyPost.py"
 alias runs="python run.py runserver"
 alias get_backbone="bash ~/dev/scripts/bash/download_backbone_pack.sh"
 
+#anaconda
+alias anip="/Users/collin/anaconda/bin/ipython"
+alias anp="/Users/collin/anaconda/bin/python"
 
 ##PATH
 
@@ -55,6 +71,8 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"                # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                        # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"      # Coreutils
 PATH="$HOME/.rbenv/bin:$PATH"                              # RBENV
+# PATH="$HOME/anaconda/bin:$PATH"
+# PATH="$PATH:/usr/local/Cellar/todo-txt/2.10/bin"          #Todo.txt
 
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
@@ -79,19 +97,34 @@ export LANG="en_US"
 export HISTSIZE=32768
 export HISTFILESIZE=$HISTSIZE
 
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
+
+
 # ====================
 # Aliases
 # ====================
+alias run='python manage.py runserver'
+alias rebuild='python manage.py rebuilddb'
+alias pag='ag --python'
+alias anki='vim /Users/collin/Dropbox/misc/anki.md'
+
 
 # show slashes for directories.
 alias ls='ls -F'
 
-alias h='history'
+# alias h='history -i 0' 
+alias history='history 0' 
 
 alias chrome='open -a "Google Chrome"'
 
+
 # Chrome 3000 Port Open...
 alias c3po='open -a "Google Chrome" "http://localhost:3000"'
+
+alias tw="$HOME/.rbenv/versions/2.2.0/bin/t"
 
 # =================
 # rbenv
@@ -100,6 +133,10 @@ alias c3po='open -a "Google Chrome" "http://localhost:3000"'
 # start rbenv (our Ruby environment and version manager) on open
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+# =================
+# virtualenvwrapper
+# =================
+source /usr/local/bin/virtualenvwrapper.sh
 # =================
 # Functions
 # =================
@@ -145,3 +182,9 @@ function mkcd () {
 # Below here is an area for other commands added by outside programs or
 # commands. Attempt to reserve this area for their use!
 ##########################################################################
+export ZELDA="/Users/collin/dev/Princess_Zelda/"
+
+# ====================================
+# PyEnv
+# ====================================
+eval "$(pyenv init -)"
