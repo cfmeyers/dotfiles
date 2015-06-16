@@ -1,7 +1,6 @@
 #symlink dotfiles to home directory
 ln -s ~/dotfiles/vim/vimrc.vim ~/.vimrc
 ln -s ~/dotfiles/zsh/zshrc.sh ~/.zshrc
-ln -s ~/dotfiles/karabiner/private.xml /Users/collin/Library/Application\ Support/Karabiner/private.xml
 
 echo 'Installing Homebrew...'
 # piping echo to simulate hitting return in the brew install script
@@ -27,10 +26,21 @@ brew install ctags
 brew install tmux
 brew install imagemagick
 
-#postgres
+#python
+brew install python
+brew install pyenv
+pyenv install 2.7.6
+#might need to restart shell here
+pyenv global 2.7.6
+pip install virtualenv
+pip install virtualenvwrapper
+
+#databases
 brew install postgresql
+brew install mysql
 brew install sqlite
 brew install redis
+
 brew install node
 brew install heroku-toolbelt
 
@@ -41,18 +51,20 @@ packagelist=(
   autoconf
   
   automake # Automake is a tool for automatically generating Makefile.in
-  libtool # generic library support script
   libyaml # a YAML 1.1 parser and emitter
   openssl # A toolkit implementing SSL v2/v3 and TLS protocols with full-strength cryptography world-wide.
   pkg-config # pkg-config is a helper tool used when compiling applications and libraries.
   libxml2 # XML C parser and toolkit
   libxslt # a language for transforming XML documents into other XML documents.
   libiconv # a conversion library between Unicode and traditional encoding
-  ctags # generates an index file of names found in source files of various programming languages
   readline # Adds history for node repl
 )
 
 brew install ${packagelist[@]}
+
+#set zsh as default shell
+sudo echo "/usr/local/bin/zsh" >> /etc/shells
+chsh -s /usr/local/bin/zsh
 
 #Git settings
 git config --global user.name cfmeyers
@@ -73,12 +85,14 @@ rbenv install 2.2.0
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
-brew cask install dash
+#these commands require you to first enter in your password
+
+# brew cask install dash
 brew cask install google-chrome
-brew cask install firefox
-brew cask install hipchat
+# brew cask install firefox
+# brew cask install hipchat
 brew cask install spectacle
-brew cask install sublime-text-3
+# brew cask install sublime-text-3
 brew cask install iterm2
 brew cask install alfred
 brew cask install dropbox
@@ -88,6 +102,7 @@ brew cask install seil
 brew cask install vlc
 
 
+ln -s ~/dotfiles/karabiner/private.xml "$HOME/Library/Application\ Support/Karabiner/private.xml"
 #brew cask alfred link #enable launch from alfred
 
 #cleanup homebrew
@@ -103,9 +118,6 @@ launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist # Start Pos
 sleep 5s # give postgres time to load
 createdb collin
 
-#set zsh as default shell
-sudo echo "/usr/local/bin/zsh" >> /etc/shells
-chsh -s /usr/local/bin/zsh
 
 
 
