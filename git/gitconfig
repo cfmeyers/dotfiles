@@ -1,0 +1,19 @@
+[user]
+	name = cfmeyers
+	email = cfmeyers@gmail.com
+[color]
+	ui = auto
+[credential]
+	helper = osxkeychain
+[alias]
+    st = status
+    ci = commit --verbose
+    co = checkout
+    aa = add --all
+    b = branch
+
+    r = !GIT_NO_PAGER=1 git l -30
+    l = "!. ~/.githelpers && pretty_git_log"
+
+[merge]
+    tool = vimdiff

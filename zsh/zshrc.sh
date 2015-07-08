@@ -110,7 +110,7 @@ alias run='python manage.py runserver --env mydev'
 alias rebuild='python manage.py rebuilddb --env mydev'
 alias pag='ag --python'
 alias anki='vim /Users/collin/Dropbox/misc/anki.md'
-
+alias nb='newsbeuter'
 
 # show slashes for directories.
 alias ls='ls -F'
@@ -183,4 +183,3 @@ function mkcd () {
 # commands. Attempt to reserve this area for their use!
 ##########################################################################
 export ZELDA="/Users/collin/dev/Princess_Zelda/"
-

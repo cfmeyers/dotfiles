@@ -100,11 +100,16 @@ nnoremap <Space> :CtrlP<cr>
 nnoremap <Space><Space> <c-^>
 nmap <leader>f :CtrlPMRU<cr>
 
-map gC :CtrlP app/controllers/<cr>
-map gm :CtrlP app/models/<cr>
-map gv :CtrlP app/views/<cr>
-map gs :CtrlP spec/<cr>
-map gr :e config/routes.rb<cr>
+" map gC :CtrlP app/controllers/<cr>
+" map gm :CtrlP app/models/<cr>
+" map gv :CtrlP app/views/<cr>
+" map gs :CtrlP spec/<cr>
+" map gr :e config/routes.rb<cr>
+"search views for file
+nnoremap <leader>v :CtrlP clubs/templates/<cr>
+
+"search for coffeescript file
+nnoremap <leader>c :CtrlP clubs/static/coffee/<cr>
 
 
 
@@ -119,9 +124,9 @@ set clipboard=unnamed
 " nnoremap <leader>t :!mocha <cr>
 " nnoremap <leader>t :!clear; mocha-phantomjs /Users/collin/dev/contactB2/test/test.html <cr>
 " :nnoremap <leader>t :!clear; rspec -c<cr>
-:nnoremap <leader>r :!clear; ruby %<cr>
-:nnoremap <leader>p :!clear; python %<cr>
-:nnoremap <leader>r :!clear; rspec % <cr>
+" :nnoremap <leader>r :!clear; ruby %<cr>
+" :nnoremap <leader>p :!clear; python %<cr>
+" :nnoremap <leader>r :!clear; rspec % <cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TESTS
@@ -129,7 +134,7 @@ set clipboard=unnamed
 let test#python#nose#options = '-s'
 :nnoremap <leader>t :TestLast<cr>
 :nnoremap <leader>a :TestFile<cr>
-:nnoremap <leader>v :TestVisit<cr>
+" :nnoremap <leader>v :TestVisit<cr>
 :nnoremap <leader>n :TestNearest<cr>
 
 
@@ -189,8 +194,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "for syntax highlighting
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jsxhint']
-nnoremap ;; m`A;<Esc>``
-inoremap ;<cr> <end>;<cr>
+" nnoremap ;; m`A;<Esc>``
+" inoremap ;<cr> <end>;<cr>
 nnoremap ,= mzgg=G`z<CR>
 
 "color line guard
