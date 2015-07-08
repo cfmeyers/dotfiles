@@ -1,6 +1,8 @@
 #symlink dotfiles to home directory
 ln -s ~/dotfiles/vim/vimrc.vim ~/.vimrc
 ln -s ~/dotfiles/zsh/zshrc.sh ~/.zshrc
+ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
+ln -s ~/dotfiles/git/githelpers ~/.githelpers
 
 echo 'Installing Homebrew...'
 # piping echo to simulate hitting return in the brew install script
