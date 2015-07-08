@@ -108,7 +108,9 @@ setopt share_history
 # ====================
 alias run='python manage.py runserver --env mydev'
 alias rebuild='python manage.py rebuilddb --env mydev'
-alias pag='ag --python'
+alias pag='ag --python --pager=less'
+alias jag='ag --jade --pager=less'
+alias cag='ag --coffee --pager=less'
 alias anki='vim /Users/collin/Dropbox/misc/anki.md'
 alias nb='newsbeuter'
 
