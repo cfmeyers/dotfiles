@@ -47,22 +47,22 @@ alias snippets='~/.emacs.d/snippets'
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 #TrueCrypt Aliases
-alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
-alias tcm="tc --text --mount /Users/collin/Dropbox/MusicBackup/MusicBackup2 /Volumes/TrueCrypt"
-alias scribbles="cd /Volumes/TrueCrypt/scribbles/source/_posts"
-alias scrib="cd /Volumes/TrueCrypt/scribbles/source/_posts"
-alias sand="cd ~/dev/sand/source/_posts"
+#alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
+#alias tcm="tc --text --mount /Users/collin/Dropbox/MusicBackup/MusicBackup2 /Volumes/TrueCrypt"
+#alias scribbles="cd /Volumes/TrueCrypt/scribbles/source/_posts"
+#alias scrib="cd /Volumes/TrueCrypt/scribbles/source/_posts"
+#alias sand="cd ~/dev/sand/source/_posts"
 
 #Personal Script Aliases
-alias np="python ~/dev/scripts/octopress/newpost.py"
-alias phys="python ~/dev/scripts/octopress/newPhysicsPost.py"
-alias crypto="python ~/dev/scripts/octopress/newCryptographyPost.py"
-alias runs="python run.py runserver"
-alias get_backbone="bash ~/dev/scripts/bash/download_backbone_pack.sh"
+#alias np="python ~/dev/scripts/octopress/newpost.py"
+#alias phys="python ~/dev/scripts/octopress/newPhysicsPost.py"
+#alias crypto="python ~/dev/scripts/octopress/newCryptographyPost.py"
+#alias runs="python run.py runserver"
+#alias get_backbone="bash ~/dev/scripts/bash/download_backbone_pack.sh"
 
 #anaconda
-alias anip="/Users/collin/anaconda/bin/ipython"
-alias anp="/Users/collin/anaconda/bin/python"
+#alias anip="/Users/collin/anaconda/bin/ipython"
+#alias anp="/Users/collin/anaconda/bin/python"
 
 ##PATH
 
@@ -106,8 +106,8 @@ setopt share_history
 # ====================
 # Aliases
 # ====================
-alias run='python manage.py runserver'
-alias rebuild='python manage.py rebuilddb'
+alias run='python manage.py runserver --env mydev'
+alias rebuild='python manage.py rebuilddb --env mydev'
 alias pag='ag --python'
 alias anki='vim /Users/collin/Dropbox/misc/anki.md'
 
@@ -134,9 +134,9 @@ alias tw="$HOME/.rbenv/versions/2.2.0/bin/t"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # =================
-# virtualenvwrapper
+# if work computer
 # =================
-source /usr/local/bin/virtualenvwrapper.sh
+source ~/dotfiles/zsh/work_computer.sh
 # =================
 # Functions
 # =================
@@ -184,7 +184,3 @@ function mkcd () {
 ##########################################################################
 export ZELDA="/Users/collin/dev/Princess_Zelda/"
 
-# ====================================
-# PyEnv
-# ====================================
-eval "$(pyenv init -)"

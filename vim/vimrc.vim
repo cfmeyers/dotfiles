@@ -118,10 +118,23 @@ set clipboard=unnamed
 " nnoremap <leader>t :!node % <cr>
 " nnoremap <leader>t :!mocha <cr>
 " nnoremap <leader>t :!clear; mocha-phantomjs /Users/collin/dev/contactB2/test/test.html <cr>
-:nnoremap <leader>t :!clear; rspec -c<cr>
+" :nnoremap <leader>t :!clear; rspec -c<cr>
 :nnoremap <leader>r :!clear; ruby %<cr>
 :nnoremap <leader>p :!clear; python %<cr>
 :nnoremap <leader>r :!clear; rspec % <cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TESTS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let test#python#nose#options = '-s'
+:nnoremap <leader>t :TestLast<cr>
+:nnoremap <leader>a :TestFile<cr>
+:nnoremap <leader>v :TestVisit<cr>
+:nnoremap <leader>n :TestNearest<cr>
+
+
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -192,4 +205,7 @@ nnoremap ,= mzgg=G`z<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePost *.coffee silent make!
 autocmd QuickFixCmdPost * nested cwindow | redraw! 
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+autocmd FileType jade set sw=2 sts=2 et
+
 
