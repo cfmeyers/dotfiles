@@ -1,0 +1,8 @@
+[nosetests]
+
+# pip install rednose
+rednose = 1
+
+# pip install nose-progressive
+with-progressive = 1
+logging-clear-handlers = 1
