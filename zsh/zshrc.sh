@@ -93,6 +93,7 @@ alias rebuild='python manage.py rebuilddb --env mydev'
 alias pag='ag --python --pager=less'
 alias jag='ag --jade --pager=less'
 alias cag='ag --coffee --pager=less'
+alias tag='ag -G test --pager=less'
 
 # show slashes for directories.
 alias ls='ls -F'
