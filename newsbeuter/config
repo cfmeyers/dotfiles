@@ -1,0 +1,16 @@
+browser open
+
+bind-key k up
+bind-key j down
+
+bind-key N prev 
+
+auto-reload yes
+reload-time 30
+
+download-full-page yes
+mark-as-read-on-hover yes
+refresh-on-startup yes
+
+show-read-feeds no
+show-read-articles no
