@@ -112,6 +112,7 @@ nnoremap <leader>v :CtrlP clubs/templates/<cr>
 nnoremap <leader>c :CtrlP clubs/static/coffee/<cr>
 
 
+nnoremap <leader>z :suspend<cr>
 
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space> 
