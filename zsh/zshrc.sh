@@ -47,22 +47,22 @@ alias snippets='~/.emacs.d/snippets'
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 #TrueCrypt Aliases
-alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
-alias tcm="tc --text --mount /Users/collin/Dropbox/MusicBackup/MusicBackup2 /Volumes/TrueCrypt"
-alias scribbles="cd /Volumes/TrueCrypt/scribbles/source/_posts"
-alias scrib="cd /Volumes/TrueCrypt/scribbles/source/_posts"
-alias sand="cd ~/dev/sand/source/_posts"
+#alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
+#alias tcm="tc --text --mount /Users/collin/Dropbox/MusicBackup/MusicBackup2 /Volumes/TrueCrypt"
+#alias scribbles="cd /Volumes/TrueCrypt/scribbles/source/_posts"
+#alias scrib="cd /Volumes/TrueCrypt/scribbles/source/_posts"
+#alias sand="cd ~/dev/sand/source/_posts"
 
 #Personal Script Aliases
-alias np="python ~/dev/scripts/octopress/newpost.py"
-alias phys="python ~/dev/scripts/octopress/newPhysicsPost.py"
-alias crypto="python ~/dev/scripts/octopress/newCryptographyPost.py"
-alias runs="python run.py runserver"
-alias get_backbone="bash ~/dev/scripts/bash/download_backbone_pack.sh"
+#alias np="python ~/dev/scripts/octopress/newpost.py"
+#alias phys="python ~/dev/scripts/octopress/newPhysicsPost.py"
+#alias crypto="python ~/dev/scripts/octopress/newCryptographyPost.py"
+#alias runs="python run.py runserver"
+#alias get_backbone="bash ~/dev/scripts/bash/download_backbone_pack.sh"
 
 #anaconda
-alias anip="/Users/collin/anaconda/bin/ipython"
-alias anp="/Users/collin/anaconda/bin/python"
+#alias anip="/Users/collin/anaconda/bin/ipython"
+#alias anp="/Users/collin/anaconda/bin/python"
 
 ##PATH
 
@@ -108,7 +108,9 @@ setopt share_history
 # ====================
 alias run='python manage.py runserver --env mydev'
 alias rebuild='python manage.py rebuilddb --env mydev'
-alias pag='ag --python'
+alias pag='ag --python --pager=less'
+alias jag='ag --jade --pager=less'
+alias cag='ag --coffee --pager=less'
 alias anki='vim /Users/collin/Dropbox/misc/anki.md'
 alias nb='newsbeuter'
 
@@ -134,9 +136,9 @@ alias tw="$HOME/.rbenv/versions/2.2.0/bin/t"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # =================
-# virtualenvwrapper
+# if work computer
 # =================
-source /usr/local/bin/virtualenvwrapper.sh
+source ~/dotfiles/zsh/work_computer.sh
 # =================
 # Functions
 # =================
@@ -183,32 +185,3 @@ function mkcd () {
 # commands. Attempt to reserve this area for their use!
 ##########################################################################
 export ZELDA="/Users/collin/dev/Princess_Zelda/"
-
-# ====================================
-# PyEnv
-# ====================================
-eval "$(pyenv init -)"
-
-# ====================================
-# Selecta
-# ====================================
-# By default, ^S freezes terminal output and ^Q resumes it. Disable that so
-# that those keys can be used for other things.
-unsetopt flowcontrol
-# Run Selecta in the current working directory, appending the selected path, if
-# any, to the current command, followed by a space.
-function insert-selecta-path-in-command-line() {
-    local selected_path
-    # Print a newline or we'll clobber the old prompt.
-    echo
-    # Find the path; abort if the user doesn't select anything.
-    selected_path=$(find * -type f | selecta) || return
-    # Append the selection to the current command buffer.
-    eval 'LBUFFER="$LBUFFER$selected_path "'
-    # Redraw the prompt since Selecta has drawn several new lines of text.
-    zle reset-prompt
-}
-# Create the zle widget
-zle -N insert-selecta-path-in-command-line
-# Bind the key to the newly created widget
-bindkey "^S" "insert-selecta-path-in-command-line"
