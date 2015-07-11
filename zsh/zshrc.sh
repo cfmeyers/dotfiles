@@ -135,10 +135,16 @@ alias tw="$HOME/.rbenv/versions/2.2.0/bin/t"
 # start rbenv (our Ruby environment and version manager) on open
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+if [ "$HOST" = "Collins-MacBook-Air.local" ]; then
+    printf '%s\n' "On MacBook Air"
+else
+    printf '%s\n' "on work computer"
+    source ~/dotfiles/zsh/work_computer.sh
+fi
+
 # =================
 # if work computer
 # =================
-source ~/dotfiles/zsh/work_computer.sh
 # =================
 # Functions
 # =================
