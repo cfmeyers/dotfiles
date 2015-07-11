@@ -8,11 +8,6 @@ fi
 unsetopt CORRECT #turn off zsh correct prompt
 # unalias rm #get rid of rm prompt inserted by prezto
 
-alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -td $HOME/Dropbox/todo/todo.cfg' #Todo.txt alias
-alias tls='clear; /usr/local/Cellar/todo-txt/2.10/bin/todo.sh -td $HOME/Dropbox/todo/todo.cfg ls' #
-
-
-source ~/.secret_config
 alias secret="vim ~/.secret_config"
 HISTIGNORE="jrnl *"
 
@@ -42,8 +37,6 @@ export EDITOR="$VISUAL"
 alias celar="clear"
 alias c="clear"
 alias video="sudo killall VDCAssistant"
-alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
-alias snippets='~/.emacs.d/snippets'
 alias c='pygmentize -O style=monokai -f console256 -g'
 
 #TrueCrypt Aliases
@@ -52,17 +45,6 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 #alias scribbles="cd /Volumes/TrueCrypt/scribbles/source/_posts"
 #alias scrib="cd /Volumes/TrueCrypt/scribbles/source/_posts"
 #alias sand="cd ~/dev/sand/source/_posts"
-
-#Personal Script Aliases
-#alias np="python ~/dev/scripts/octopress/newpost.py"
-#alias phys="python ~/dev/scripts/octopress/newPhysicsPost.py"
-#alias crypto="python ~/dev/scripts/octopress/newCryptographyPost.py"
-#alias runs="python run.py runserver"
-#alias get_backbone="bash ~/dev/scripts/bash/download_backbone_pack.sh"
-
-#anaconda
-#alias anip="/Users/collin/anaconda/bin/ipython"
-#alias anp="/Users/collin/anaconda/bin/python"
 
 ##PATH
 
@@ -111,8 +93,6 @@ alias rebuild='python manage.py rebuilddb --env mydev'
 alias pag='ag --python --pager=less'
 alias jag='ag --jade --pager=less'
 alias cag='ag --coffee --pager=less'
-alias anki='vim /Users/collin/Dropbox/misc/anki.md'
-alias nb='newsbeuter'
 
 # show slashes for directories.
 alias ls='ls -F'
@@ -122,12 +102,6 @@ alias history='history 0'
 
 alias chrome='open -a "Google Chrome"'
 
-
-# Chrome 3000 Port Open...
-alias c3po='open -a "Google Chrome" "http://localhost:3000"'
-
-alias tw="$HOME/.rbenv/versions/2.2.0/bin/t"
-
 # =================
 # rbenv
 # =================
@@ -136,38 +110,22 @@ alias tw="$HOME/.rbenv/versions/2.2.0/bin/t"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 if [ "$HOST" = "Collins-MacBook-Air.local" ]; then
+    # =================
+    # if personal computer
+    # =================
     printf '%s\n' "On MacBook Air"
+    source ~/dotfiles/zsh/personal_computer.sh
 else
+    # =================
+    # if work computer
+    # =================
     printf '%s\n' "on work computer"
     source ~/dotfiles/zsh/work_computer.sh
 fi
 
 # =================
-# if work computer
-# =================
-# =================
 # Functions
 # =================
-
-#######################################
-# Start an HTTP server from a directory
-# Arguments:
-#  Port (optional)
-#######################################
-
-server() {
-  local port="${1:-8000}"
-  open "http://localhost:${port}/"
-  # Set the default Content-Type to `text/plain` instead of `application/octet-stream`
-  # And serve everything as UTF-8 (although not technically correct, this doesn’t break anything for binary files)
-
-  # Simple Pythong Server:
-  # python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
-
-  # Simple Ruby Webrick Server:
-  ruby -e "require 'webrick';server = WEBrick::HTTPServer.new(:Port=>${port},:DocumentRoot=>Dir::pwd );trap('INT'){ server.shutdown };server.start"
-}
-
 
 function google() { open /Applications/Google\ Chrome.app/ "http://www.google.com/search?q= $1"; }
 
@@ -182,12 +140,3 @@ function mkcd () {
     mkdir -p "$*"
     cd "$*"
 }
-
-# ====================================
-# Environmental Variables and API Keys
-# ====================================
-
-# Below here is an area for other commands added by outside programs or
-# commands. Attempt to reserve this area for their use!
-##########################################################################
-export ZELDA="/Users/collin/dev/Princess_Zelda/"
