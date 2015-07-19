@@ -17,3 +17,5 @@
 
 [merge]
     tool = vimdiff
+[core]
+	excludesfile = /Users/collin/.gitignore

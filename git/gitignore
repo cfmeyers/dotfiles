@@ -1,0 +1,8 @@
+vim.tern-project
+.tern-project
+.DS_Store
+TAGS
+!TAGS/
+tags
+!tags/
+*txt

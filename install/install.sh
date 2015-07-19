@@ -8,6 +8,9 @@ ln -s ~/dotfiles/nosetests/noserc ~/.noserc
 ln -s ~/dotfiles/newsbeuter/urls ~/.newsbeuter/urls
 ln -s ~/dotfiles/newsbeuter/config ~/.newsbeuter/config
 
+ln -s ~/dotfiles/git/gitignore ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
+
 echo 'Installing Homebrew...'
 # piping echo to simulate hitting return in the brew install script
 echo | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
