@@ -14,3 +14,5 @@ refresh-on-startup yes
 
 show-read-feeds no
 show-read-articles no
+
+article-sort-order date-asc
