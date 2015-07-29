@@ -111,7 +111,6 @@ nnoremap <leader>v :CtrlP clubs/templates/<cr>
 "search for coffeescript file
 nnoremap <leader>c :CtrlP clubs/static/coffee/<cr>
 
-
 nnoremap <leader>z :suspend<cr>
 
 " Insert a hash rocket with <c-l>
