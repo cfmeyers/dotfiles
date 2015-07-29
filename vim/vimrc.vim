@@ -65,8 +65,8 @@ autocmd FileType ruby set sw=2 sts=2 et
 colorscheme jellybeans
 " colorscheme vividchalk
 
-
-
+"json highlighting
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 
 
