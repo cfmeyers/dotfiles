@@ -65,8 +65,8 @@ autocmd FileType ruby set sw=2 sts=2 et
 colorscheme jellybeans
 " colorscheme vividchalk
 
-
-
+"json highlighting
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 
 
@@ -79,8 +79,22 @@ vnoremap L $
 nnoremap H 0
 vnoremap H 0
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Make vim split pains work with mouse
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Send more characters for redraws
+set ttyfast
+" Enable mouse use in all modes
+set mouse=a
+" Set this to the name of your terminal that supports mouse codes.
+" Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
+set ttymouse=xterm2
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 if executable('ag')
   " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor

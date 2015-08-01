@@ -89,6 +89,7 @@ setopt share_history
 # Aliases
 # ====================
 alias run='python manage.py runserver --env mydev'
+alias runforbes='python manage.py runserver --site forbes --env mydev'
 alias rebuild='python manage.py rebuilddb --env mydev'
 alias pag='ag --python --pager=less'
 alias jag='ag --jade --pager=less'
