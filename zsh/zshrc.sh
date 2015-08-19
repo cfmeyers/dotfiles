@@ -18,6 +18,7 @@ alias zshreload="source ~/.zshrc; echo sourcing zshrc!"
 alias zreload="source ~/.zshrc; echo sourcing zshrc!"
 alias reload="source ~/.zshrc; echo sourcing zshrc!"
 alias vconfig="vim ~/dotfiles/vim/vimrc.vim"
+alias nconfig="vim ~/dotfiles/nosetests/noserc"
 
 alias cd..="cd .."
 alias cd...="cd ../.."
@@ -38,6 +39,8 @@ alias celar="clear"
 alias c="clear"
 alias video="sudo killall VDCAssistant"
 alias c='pygmentize -O style=monokai -f console256 -g'
+alias disable_ethernet="sudo ifconfig en0 down"
+alias enable_ethernet="sudo ifconfig en0 up"
 
 #TrueCrypt Aliases
 #alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"

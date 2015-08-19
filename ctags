@@ -1,0 +1,4 @@
+--recurse=yes
+--tag-relative=no
+--exclude=.git
+--python-kinds=-i

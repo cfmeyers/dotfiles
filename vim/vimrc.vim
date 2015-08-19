@@ -2,11 +2,20 @@
 execute pathogen#infect()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set tags=tags;/
+
+"include python standard library and individual project tags (from oren's dotfiles),
+"be sure to run:
+"ctags -R /System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/
+"ctags -R ~/.virtualenvs/clubs/lib/python2.7/
+set tags+=/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/tags
+set tags+=~/.virtualenvs/clubs/lib/python2.7/tags
+
+
 let g:ackprg = 'ag --nogroup --nocolor --column'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" BASIC EDITING CONFIGURATION
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"From Gary Bernhardt's dotfiles https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" " BASIC EDITING CONFIGURATION
+" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" "From Gary Bernhardt's dotfiles https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 set nocompatible
 set hidden "for buffers
 
@@ -16,29 +25,29 @@ set tabstop=4
 set shiftwidth=4 "number of spaces for autoindenting
 set softtabstop=4
 
-set relativenumber
+"set relativenumber "this slows down vim greatly on big files
 set number "always show line number
 set autoindent
 
-""search
+" ""search
 set incsearch
 set hlsearch
 set ignorecase smartcase " make searches case-sensitive only if they contain upper-case characters
 
-set cursorline " highlight current line
-hi CursorLine  cterm=NONE ctermbg=17 ctermfg=NONE
+" set cursorline " highlight current line
+" hi CursorLine  cterm=NONE ctermbg=17 ctermfg=NONE
 
- " Jump to last cursor position unless it's invalid or in an event handler
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal g`\"" |
-    \ endif
+"  " Jump to last cursor position unless it's invalid or in an event handler
+   autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal g`\"" |
+     \ endif
 
 set cmdheight=2
 set showtabline=2
 set scrolloff=3
 
-" Don't make backups at all
+" " Don't make backups at all
 set nobackup
 set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
@@ -71,9 +80,9 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 
 
 imap kj <Esc>
-imap aa @
-imap uu _
-imap hh #
+" imap aa @
+" imap uu _
+" imap hh #
 nnoremap L $
 vnoremap L $
 nnoremap H 0
@@ -114,33 +123,14 @@ nnoremap <Space> :CtrlP<cr>
 nnoremap <Space><Space> <c-^>
 nmap <leader>f :CtrlPMRU<cr>
 
-" map gC :CtrlP app/controllers/<cr>
-" map gm :CtrlP app/models/<cr>
-" map gv :CtrlP app/views/<cr>
-" map gs :CtrlP spec/<cr>
-" map gr :e config/routes.rb<cr>
 "search views for file
 nnoremap <leader>v :CtrlP clubs/templates/<cr>
 
 "search for coffeescript file
 nnoremap <leader>c :CtrlP clubs/static/coffee/<cr>
 
-nnoremap <leader>z :suspend<cr>
-
-" Insert a hash rocket with <c-l>
-imap <c-l> <space>=><space> 
-
 "fix copy and paste in OS X
 set clipboard=unnamed
-
-" nnoremap <leader>t :!rspec spec/spec.rb<cr>
-" nnoremap <leader>t :!node % <cr>
-" nnoremap <leader>t :!mocha <cr>
-" nnoremap <leader>t :!clear; mocha-phantomjs /Users/collin/dev/contactB2/test/test.html <cr>
-" :nnoremap <leader>t :!clear; rspec -c<cr>
-" :nnoremap <leader>r :!clear; ruby %<cr>
-" :nnoremap <leader>p :!clear; python %<cr>
-" :nnoremap <leader>r :!clear; rspec % <cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TESTS
@@ -179,12 +169,8 @@ nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap gb :CtrlPMRU<cr>
 
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" Move around splits with <c-h
+" Move around splits without <c-w>
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
@@ -193,23 +179,12 @@ nnoremap <c-l> <c-w>l
 set splitbelow
 set splitright
 
-"to get emmet to tab complete:
-function! s:zen_html_tab()
-    let line = getline('.')
-    if match(line, '<.*>') >= 0
-        return "\<c-y>n"
-    endif
-    return "\<c-y>,"
-endfunction
-autocmd FileType html imap <buffer><expr><tab> <sid>zen_html_tab()
 
 "get rid of autocomment when making newline from comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "for syntax highlighting
-let g:syntastic_check_on_open=1
-let g:syntastic_javascript_checkers = ['jsxhint']
-" nnoremap ;; m`A;<Esc>``
-" inoremap ;<cr> <end>;<cr>
+" let g:syntastic_check_on_open=1
+" let g:syntastic_javascript_checkers = ['jsxhint']
 nnoremap ,= mzgg=G`z<CR>
 
 "color line guard
