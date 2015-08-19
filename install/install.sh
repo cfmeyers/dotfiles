@@ -1,3 +1,6 @@
+#install xcode command line tools 
+#xcode-select --install
+
 #symlink dotfiles to home directory
 ln -s ~/dotfiles/vim/vimrc.vim ~/.vimrc
 ln -s ~/dotfiles/zsh/zshrc.sh ~/.zshrc
@@ -79,12 +82,12 @@ brew install ${packagelist[@]}
 sudo echo "/usr/local/bin/zsh" >> /etc/shells
 chsh -s /usr/local/bin/zsh
 
-#Git settings
-git config --global user.name cfmeyers
+# #Git settings
+# git config --global user.name cfmeyers
 
-read -p "Github Email: "             github_email
-git config --global user.email $github_email
-git config --global color.ui always
+# read -p "Github Email: "             github_email
+# git config --global user.email $github_email
+# git config --global color.ui always
 
 
 #RBENV
