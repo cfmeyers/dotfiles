@@ -41,6 +41,7 @@ alias video="sudo killall VDCAssistant"
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias disable_ethernet="sudo ifconfig en0 down"
 alias enable_ethernet="sudo ifconfig en0 up"
+alias work="cd ~/dev/clubs"
 
 #TrueCrypt Aliases
 #alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
