@@ -178,13 +178,17 @@ nnoremap <c-l> <c-w>l
 
 set splitbelow
 set splitright
+ 
+let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
+nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "get rid of autocomment when making newline from comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "for syntax highlighting
-" let g:syntastic_check_on_open=1
-" let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['jsxhint']
 nnoremap ,= mzgg=G`z<CR>
 
 "color line guard
