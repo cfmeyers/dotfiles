@@ -115,7 +115,7 @@ alias chrome='open -a "Google Chrome"'
 # start rbenv (our Ruby environment and version manager) on open
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-if  test "$HOST" = "Collins-MacBook-Air.local" || test "$HOST" = "Collins-Air.home" ; then
+if  test "$HOST" = "Collins-MacBook-Air.local" || test "$HOST" = "Collins-Air.home"  || test "$HOST" = "Collins-Air.fios-router.home"; then
     # =================
     # if personal computer
     # =================
