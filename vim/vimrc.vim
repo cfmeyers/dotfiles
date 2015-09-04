@@ -83,10 +83,10 @@ imap kj <Esc>
 " imap aa @
 " imap uu _
 " imap hh #
-nnoremap L $
-vnoremap L $
-nnoremap H 0
-vnoremap H 0
+" nnoremap L $
+" vnoremap L $
+" nnoremap H 0
+" vnoremap H 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make vim split pains work with mouse
