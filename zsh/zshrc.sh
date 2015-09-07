@@ -42,6 +42,8 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 alias disable_ethernet="sudo ifconfig en0 down"
 alias enable_ethernet="sudo ifconfig en0 up"
 alias work="cd ~/dev/clubs"
+alias dots="cd ~/dotfiles"
+alias scratch="vim ~/practice/python/scratch.py"
 
 #TrueCrypt Aliases
 #alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
