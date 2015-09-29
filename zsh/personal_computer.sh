@@ -1,10 +1,9 @@
 # Personal Computer
+source /usr/local/bin/virtualenvwrapper.sh
 # ====================================
 # PyEnv
 # ====================================
-source /usr/local/bin/virtualenvwrapper.sh
 eval "$(pyenv init -)"
-
 
 export ZELDA="/Users/collin/dev/Princess_Zelda/"
 alias anki='vim /Users/collin/Dropbox/misc/anki.md'
