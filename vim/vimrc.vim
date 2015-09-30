@@ -190,8 +190,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jsxhint']
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501'
-
+let g:syntastic_python_flake8_args='--ignore=E501,E711,E128,E127,E501,W293,E125,E124,E126'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
