@@ -14,4 +14,5 @@ alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -td $HOME/Dropbox/todo/todo
 alias tls='clear; /usr/local/Cellar/todo-txt/2.10/bin/todo.sh -td $HOME/Dropbox/todo/todo.cfg ls' #
 alias tools="ssh -A -i ~/.ssh/testlaptop_id_rsa collin@tools.wineapi.com"
 
+alias killmanage="ps aux | grep manage.py | awk '{print \$2}' | xargs kill"
 source ~/.secret_config
