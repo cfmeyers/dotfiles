@@ -67,14 +67,13 @@ autocmd FileType ruby set sw=2 sts=2 et
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:set t_Co=256 " 256 colors
-:set background=dark
+set t_Co=256 " 256 colors
+set background=dark
 " colorscheme distinguished
 " colorscheme grb256
 " colorscheme vividchalk
 " colorscheme jellybeans
 colorscheme anderson
-
 "json highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
@@ -192,6 +191,16 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "for syntax highlighting
 let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_flake8_args='--ignore=E501,E711,E128,E127,E501,W293,E125,E124,E126'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 nnoremap ,= mzgg=G`z<CR>
 
 "color line guard
