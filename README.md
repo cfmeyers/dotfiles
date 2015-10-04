@@ -1,2 +1,12 @@
+#tmux setup
 
-Note:  I have CAPSLOCK remapped as `ctrl-alt-command-shift`.  In order to remap Tmux's prefix key to my `CAPSLOCK-F`, open up iTerm2, go to Keys, and add a Global Keyboard Shortcut that will be triggered by `CAPSLOCK`+`F`.  Select "send a hex code" and send 0x02, which is the hex code for `CTRL-B` (which is Tmux's default prefix key).
+Note:  I have CAPSLOCK remapped as `ctrl-alt-command-shift` using the OS X utility Karabiner.  
+
+In order to use my CAPSLOCK key in tmux (which doesn't appear to have support for 4 different modifier keys used simultaneously), you must instruct iTerm2 to send hex codes.
+
+| key combo used in iTerm2 | hex code sent | ASCII  | tmux.conf binding    |
+| ------------------------ | ------------- | ------ | -------------------- |
+| CAPSLOCK+f               | 0x02          | CTRL+b | prefix key           |
+| CAPSLOCK+h               | 0x06          | CTRL+f | cycle-panes-forward  |
+| CAPSLOCK+l               | 0x05          | CTRL+e | cycle-panes-backward |
+
