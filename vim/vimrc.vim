@@ -164,6 +164,8 @@ let g:ctrlp_custom_ignore = {
 " Use the nearest .git directory as the cwd
 let g:ctrlp_working_path_mode = 'r'
 
+" set up ctlrp to show more files (20) initially, match from top to bottom
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:20,results:20'
 
 " Easy bindings for its various modes
 nmap <leader>bb :CtrlPBuffer<cr>
