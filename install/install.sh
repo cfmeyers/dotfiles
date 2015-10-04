@@ -62,6 +62,7 @@ brew install redis
 brew install node
 brew install heroku-toolbelt
 
+brew install reattach-to-user-namespace #for tmux copy/paste
 #from WDI install script
 packagelist=(
   # Autoconf is an extensible package of M4 macros that produce shell scripts to
