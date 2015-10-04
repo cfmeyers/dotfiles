@@ -2,7 +2,7 @@
 
 Note:  I have CAPSLOCK remapped as `ctrl-alt-command-shift` using the OS X utility Karabiner.  
 
-In order to use my CAPSLOCK key in tmux (which doesn't appear to have support for 4 different modifier keys used simultaneously), you must instruct iTerm2 to send hex codes.
+In order to use my CAPSLOCK key in tmux (which doesn't appear to have support for 4 different modifier keys used simultaneously), you must instruct iTerm2 to send hex codes (Preferences, Keys, Global Shortcut Keys).
 
 | key combo used in iTerm2 | hex code sent | ASCII  | tmux.conf binding    |
 | ------------------------ | ------------- | ------ | -------------------- |
