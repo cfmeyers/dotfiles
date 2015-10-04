@@ -18,6 +18,7 @@ alias zshreload="source ~/.zshrc; echo sourcing zshrc!"
 alias zreload="source ~/.zshrc; echo sourcing zshrc!"
 alias reload="source ~/.zshrc; echo sourcing zshrc!"
 alias vconfig="vim ~/dotfiles/vim/vimrc.vim"
+alias tconfig="vim ~/dotfiles/tmux/tmux.conf"
 alias nconfig="vim ~/dotfiles/nosetests/noserc"
 
 alias cd..="cd .."
