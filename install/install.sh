@@ -8,6 +8,8 @@ ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/git/githelpers ~/.githelpers
 ln -s ~/dotfiles/nosetests/noserc ~/.noserc
 
+ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+
 ln -s ~/dotfiles/newsbeuter/urls ~/.newsbeuter/urls
 ln -s ~/dotfiles/newsbeuter/config ~/.newsbeuter/config
 
