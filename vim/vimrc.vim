@@ -135,6 +135,7 @@ set clipboard=unnamed
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let test#python#runner = 'nose'
 let test#python#nose#options = '-s'
 :nnoremap <leader>t :TestLast<cr>
 :nnoremap <leader>a :TestFile<cr>
