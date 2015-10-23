@@ -1,9 +1,8 @@
+export WORKON_HOME=$HOME/.virtualenvs
 
-# ====================================
-# PyEnv
-# ====================================
-eval "$(pyenv init -)"
+if [[ -r /usr/local/bin/virtualenvwrapper.sh ]]; then
+        source /usr/local/bin/virtualenvwrapper.sh
+else
+    echo "WARNING: Can't find virtualenvwrapper.sh"
+fi
 
-alias tools="ssh -A -i ~/.ssh/id_rsa_test collin@tools.wineapi.com"
-
-pyenv virtualenvwrapper
