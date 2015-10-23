@@ -26,11 +26,6 @@ alias cd...="cd ../.."
 alias cd....="cd ../../.."
 alias vi="vim"
 
-alias transparent="echo -e '\033]50;SetProfile=TransparentCollin\a'"
-alias tra="echo -e '\033]50;SetProfile=TransparentCollin\a'"
-alias opaque="echo -e '\033]50;SetProfile=OpaqueCollin\a'"
-alias op="echo -e '\033]50;SetProfile=OpaqueCollin\a'"
-
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
@@ -46,22 +41,12 @@ alias work="cd ~/dev/clubs"
 alias dots="cd ~/dotfiles"
 alias scratch="vim ~/practice/python/scratch.py"
 
-#TrueCrypt Aliases
-#alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
-#alias tcm="tc --text --mount /Users/collin/Dropbox/MusicBackup/MusicBackup2 /Volumes/TrueCrypt"
-#alias scribbles="cd /Volumes/TrueCrypt/scribbles/source/_posts"
-#alias scrib="cd /Volumes/TrueCrypt/scribbles/source/_posts"
-#alias sand="cd ~/dev/sand/source/_posts"
-
 ##PATH
-
 PATH="/usr/local/share/npm/bin:$PATH"                      # NPM
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"                # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                        # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"      # Coreutils
 PATH="$HOME/.rbenv/bin:$PATH"                              # RBENV
-# PATH="$HOME/anaconda/bin:$PATH"
-# PATH="$PATH:/usr/local/Cellar/todo-txt/2.10/bin"          #Todo.txt
 
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
@@ -106,7 +91,6 @@ alias tag='ag -G test --pager=less'
 # show slashes for directories.
 alias ls='ls -F'
 
-# alias h='history -i 0' 
 alias history='history 0' 
 
 alias chrome='open -a "Google Chrome"'
@@ -117,6 +101,8 @@ alias chrome='open -a "Google Chrome"'
 
 # start rbenv (our Ruby environment and version manager) on open
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
 
 if  test "$HOST" = "Collins-MacBook-Air.local" || test "$HOST" = "Collins-Air.home"  || test "$HOST" = "Collins-Air.fios-router.home"; then
     # =================
@@ -149,3 +135,20 @@ function mkcd () {
     mkdir -p "$*"
     cd "$*"
 }
+
+function run_clubs_tests() {
+    for f in ~/dev/clubs/clubs/tests/*; do 
+        # if [ $f = *test* ] 
+        # then
+        #     echo $f
+            echo "========================="
+            echo "Running tests for $f"; 
+            nosetests $f; 
+            echo "========================="
+    # else
+    #     echo "no"
+    #     fi
+    done
+}
+
+alias nn=run_clubs_tests
