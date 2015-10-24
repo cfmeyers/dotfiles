@@ -42,14 +42,9 @@ brew install the_silver_searcher
 brew install vim
 brew install ctags
 brew install tmux
-brew install imagemagick
 
 #python
 brew install python
-brew install pyenv
-pyenv install 2.7.6
-#might need to restart shell here
-pyenv global 2.7.6
 pip install virtualenv
 pip install virtualenvwrapper
 
@@ -85,14 +80,6 @@ brew install ${packagelist[@]}
 sudo echo "/usr/local/bin/zsh" >> /etc/shells
 chsh -s /usr/local/bin/zsh
 
-# #Git settings
-# git config --global user.name cfmeyers
-
-# read -p "Github Email: "             github_email
-# git config --global user.email $github_email
-# git config --global color.ui always
-
-
 #RBENV
 git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
 git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/rbenv-gem-rehash
@@ -106,23 +93,21 @@ brew install brew-cask
 
 #these commands require you to first enter in your password
 
-# brew cask install dash
-brew cask install google-chrome
-# brew cask install firefox
-# brew cask install hipchat
-brew cask install spectacle
-# brew cask install sublime-text-3
-brew cask install iterm2
-brew cask install alfred
-brew cask install dropbox
-#brew cask install caffeine
-brew cask install karabiner
-brew cask install seil
-brew cask install vlc
+#GUI apps to install
+# google-chrome
+# iterm2
+# alfred
+# dropbox
+# karabiner
+# seil
+# slack
+# firefox
+# spectacle
+# sublime-text-3
+# vlc
 
 
 ln -s ~/dotfiles/karabiner/private.xml "$HOME/Library/Application\ Support/Karabiner/private.xml"
-#brew cask alfred link #enable launch from alfred
 
 #cleanup homebrew
 brew tap --repair
