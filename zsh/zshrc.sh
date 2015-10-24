@@ -1,3 +1,11 @@
+
+#installing Prezto
+setopt EXTENDED_GLOB
+#for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+#  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+#done
+
+
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -46,27 +54,20 @@ alias work="cd ~/dev/clubs"
 alias dots="cd ~/dotfiles"
 alias scratch="vim ~/practice/python/scratch.py"
 
-#TrueCrypt Aliases
-#alias tc="/Applications/TrueCrypt.app/Contents/MacOS/Truecrypt --text"
-#alias tcm="tc --text --mount /Users/collin/Dropbox/MusicBackup/MusicBackup2 /Volumes/TrueCrypt"
-#alias scribbles="cd /Volumes/TrueCrypt/scribbles/source/_posts"
-#alias scrib="cd /Volumes/TrueCrypt/scribbles/source/_posts"
-#alias sand="cd ~/dev/sand/source/_posts"
-
 ##PATH
 
 PATH="/usr/local/share/npm/bin:$PATH"                      # NPM
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"                # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                        # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"      # Coreutils
-PATH="$HOME/.rbenv/bin:$PATH"                              # RBENV
+#PATH="$HOME/.rbenv/bin:$PATH"                              # RBENV
 # PATH="$HOME/anaconda/bin:$PATH"
 # PATH="$PATH:/usr/local/Cellar/todo-txt/2.10/bin"          #Todo.txt
 
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
 
-eval "$(rbenv init -)" #for RBENV
+# eval "$(rbenv init -)" #for RBENV
 
 # =================
 # Settings
