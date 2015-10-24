@@ -16,3 +16,31 @@ In order to use my CAPSLOCK key in tmux (which doesn't appear to have support fo
 [Hex code table](http://www.unix-manuals.com/refs/misc/ascii-table.html)
 
 [Command+k working in tmux trick](https://coderwall.com/p/rkstvg/clear-pane-in-tmux)
+
+#Karabiner/Seil setup
+
+1.)  Go to the Keyboards utility in OS X,
+
+    -  select the "Modifier Keys..." button on the bottom right side.
+
+    -  change the Capslock key to "No Action"
+
+2.)  download and launch Seil
+
+    -  select the "Change the capslock key" checkbox (near the top)
+
+    -  change the keycode option to 80 (this is the keycode for F19)
+
+3.)  download karabiner
+
+    -  symlink the private.xml file from the dotfiles to the location karabiner expects
+
+        -  `ln -s ~/dotfiles/karabiner/private.xml "$HOME/Library/Application\ Support/Karabiner/private.xml"`
+
+    -  open up karabiner, select the "Reload XML" button on the top right
+
+    -  select the Remap Capslock to Hyper with Escape on tap option (which you should now see since you reloaded the XML)
+
+    -  now you can use Capslock as a Hyper key
+
+
