@@ -73,7 +73,8 @@ set background=dark
 " colorscheme grb256
 " colorscheme vividchalk
 " colorscheme jellybeans
-colorscheme anderson
+" colorscheme anderson
+colorscheme badwolf
 "json highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
