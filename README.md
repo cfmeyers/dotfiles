@@ -50,3 +50,10 @@ In order to use my CAPSLOCK key in tmux (which doesn't appear to have support fo
     -  change fn key behavior to ctrl (Change Fn key, select Fn to Control_L
 
 
+#Using Ctags
+
+In your project directory, run
+
+`ctags -R -f ./.git/tags .`
+
+This puts the tag file in the git directory so it won't be versioned

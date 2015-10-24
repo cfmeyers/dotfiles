@@ -129,6 +129,10 @@ done
 rm .zpreztorc
 ln -s ~/dotfiles/zsh/zpreztorc.sh ~/.zpreztorc
 
-
+#setup mysql
+mysql.server start
+mysql -u root
+# mysql> CREATE USER 'test'@'localhost';
+# mysql> GRANT ALL PRIVILEGES ON *.* TO 'test'@'localhost';
 
 
