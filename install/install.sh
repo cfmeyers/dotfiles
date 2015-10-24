@@ -87,11 +87,6 @@ git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-bu
 
 rbenv install 2.2.0
 
-#Cask
-brew tap phinze/homebrew-cask
-brew install brew-cask
-
-#these commands require you to first enter in your password
 
 #GUI apps to install
 # google-chrome
@@ -123,6 +118,16 @@ sleep 5s # give postgres time to load
 createdb collin
 
 
+#Prezto Zsh framework (see setup instructions at https://github.com/sorin-ionescu/prezto)
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
+rm .zpreztorc
+ln -s ~/dotfiles/zsh/zpreztorc.sh ~/.zpreztorc
 
 
 
