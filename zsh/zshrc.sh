@@ -14,7 +14,6 @@ fi
 
 #unsetopt correct_all 
 unsetopt CORRECT #turn off zsh correct prompt
-# unalias rm #get rid of rm prompt inserted by prezto
 
 alias secret="vim ~/.secret_config"
 HISTIGNORE="jrnl *"
@@ -59,7 +58,7 @@ PATH="$HOME/.rbenv/bin:$PATH"                              # RBENV
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
 
-# eval "$(rbenv init -)" #for RBENV
+eval "$(rbenv init -)" #for RBENV
 
 # =================
 # Settings
