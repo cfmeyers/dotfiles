@@ -43,4 +43,10 @@ In order to use my CAPSLOCK key in tmux (which doesn't appear to have support fo
 
     -  now you can use Capslock as a Hyper key
 
+4.)  while you're in karabiner, 
+
+    -  set the key repeat rate (I'm currently at delay of 40 ms, repeat at 20 ms)
+
+    -  change fn key behavior to ctrl (Change Fn key, select Fn to Control_L
+
 
