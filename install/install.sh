@@ -137,5 +137,11 @@ mysql -u root
 # mysql> GRANT ALL PRIVILEGES ON *.* TO 'tr_user'@'localhost';
 # mysql> SET PASSWORD FOR 'tr_user'@'localhost' = PASSWORD('some_cool_password');
 
+##setting up Sequel Pro (local dev db)
+# Select the "Socket" option
+# username is tr_user
+# password is in the mydev.py file
+# Database is dev
+
 
 
