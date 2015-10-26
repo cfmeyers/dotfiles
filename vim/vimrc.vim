@@ -144,6 +144,7 @@ let test#python#nose#options = '-s'
 :nnoremap <leader>n :TestNearest<cr>
 
 
+set diffopt+=vertical "for fugitive to always do Gdiff vertically
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

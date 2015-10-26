@@ -132,7 +132,10 @@ ln -s ~/dotfiles/zsh/zpreztorc.sh ~/.zpreztorc
 #setup mysql
 mysql.server start
 mysql -u root
-# mysql> CREATE USER 'test'@'localhost';
-# mysql> GRANT ALL PRIVILEGES ON *.* TO 'test'@'localhost';
+# mysql> CREATE DATABASE dev;
+# mysql> CREATE USER 'tr_user'@'localhost'
+# mysql> GRANT ALL PRIVILEGES ON *.* TO 'tr_user'@'localhost';
+# mysql> SET PASSWORD FOR 'tr_user'@'localhost' = PASSWORD('some_cool_password');
+
 
 
