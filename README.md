@@ -57,3 +57,7 @@ In your project directory, run
 `ctags -R -f ./.git/tags .`
 
 This puts the tag file in the git directory so it won't be versioned
+
+#Setting Up SSH Keys
+
+Check out [this](https://developer.github.com/guides/using-ssh-agent-forwarding/) guide to setting up ssh agent forwarding
