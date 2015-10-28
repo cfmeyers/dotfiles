@@ -146,7 +146,6 @@ let test#python#nose#options = '-s'
 
 set diffopt+=vertical "for fugitive to always do Gdiff vertically
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -222,10 +221,9 @@ autocmd QuickFixCmdPost * nested cwindow | redraw!
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 autocmd FileType jade set sw=2 sts=2 et
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Markdown
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " for use with with Tim Pope's vim-markdown plugin
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
-
-augroup markdown
-    au!
-    au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
-augroup END
