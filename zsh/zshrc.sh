@@ -50,7 +50,7 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"          # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                   # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # Coreutils
 PATH="$HOME/.rbenv/bin:$PATH"                        # RBENV
-
+PATH="$PATH:/Users/collin/anaconda/bin"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
 # ======== #
@@ -72,6 +72,11 @@ setopt inc_append_history # Appends every command to the history file once it is
 setopt share_history # Reloads the history whenever you use it
 HISTIGNORE="jrnl *"
 
+
+# ============ #
+# Data Science #
+# ============ #
+alias conipy="~/anaconda/bin/ipython"
 
 # ============ #
 # Work Aliases #
