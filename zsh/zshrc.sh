@@ -130,3 +130,12 @@ function google() { open /Applications/Google\ Chrome.app/ "http://www.google.co
 function firefox() { open -a /Applications/Firefox.app/ "http://www.google.com/search?q= $1"; }
 
 function mkcd () { mkdir -p "$*"; cd "$*" }
+
+function fixredis ()
+{
+    echo "fixing redis";
+    find . -name "*.pyc" -type f -delete
+    echo "CACHE_TYPE = 'simple'" >> ~/dev/clubs/clubs/config/common.py;
+    echo "redis stuff fixed";
+
+}
