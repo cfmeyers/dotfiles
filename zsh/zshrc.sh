@@ -139,3 +139,10 @@ function fixredis ()
     echo "redis stuff fixed";
 
 }
+function unfixredis ()
+{
+    echo "unfixing redis";
+    git co ~/dev/clubs/clubs/config/common.py;
+    echo "redis unfixed";
+
+}
