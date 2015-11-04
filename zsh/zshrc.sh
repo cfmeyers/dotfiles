@@ -50,7 +50,7 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"          # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                   # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # Coreutils
 PATH="$HOME/.rbenv/bin:$PATH"                        # RBENV
-PATH="$PATH:/Users/collin/anaconda/bin"
+# PATH="$PATH:/Users/collin/anaconda/bin"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
 # ======== #

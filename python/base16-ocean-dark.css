@@ -89,18 +89,54 @@ div.output_stderr pre {color: #dfe1e8;}
 /* my additions */
 div#notebook-container{
     background-color: #19171c;
+    /* background-color: #655f6d; */
  
 }
 div#notebook{
-    /* background-color: black; */
     background-color: #19171c;
 }
 div#header{
-    /* background-color: #eff1f5;; */
-    /* background-color: red; */
-    background-color: #585260;
+    background-color: #19171c;
+    color: white;
 }
-/* div.navbar-collapse{ */
-/*     background-color: #955ae7; */
-/* } */
+div.navbar-collapse{
+    background-color: #19171c ;
+}
 div#header-container{display: none !important;}
+
+/* pandas dataframes (from Brandon Rhodes talk)
+colors from http://atelierbram.github.io/syntax-highlighting/atelier-schemes/cave/ */
+table.dataframe {
+    border-collapse: collapse;
+    border: 4px solid #2a9292;
+}
+table.dataframe tr {
+    border: none;
+}
+table.dataframe td, table.dataframe th {
+    margin: 0;
+    border: 1px solid #2a9292;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+}
+table.dataframe th:not(:empty) {
+    background-color: #19171c  ;
+
+    text-align: left;
+    font-weight: bold;
+    color: #bf40bf;
+}
+table.dataframe tr:nth-child(2) th:empty {
+    border-left: none;
+    border-right: 1px dashed #888;
+}
+table.dataframe td {
+    border: 2px solid #2a9292;
+    background-color: #26232a  ;
+    color: #576ddb  ;
+    font-weight: bold;
+}
+div.output_png{
+    background-color: #e2dfe7;
+
+}
