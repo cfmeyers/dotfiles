@@ -21,6 +21,7 @@ ln -s ~/dotfiles/python/pdbrc.py ~/.pdbrc.py
 ln -s ~/dotfiles/ctags ~/.ctags
 
 ln -s ~/dotfiles/python/base16-ocean-dark.css ~/.ipython/profile_default/static/custom/custom.css
+ln -s ~/dotfiles/python/custom.js ~/.ipython/profile_default/static/custom/custom.js
 
 echo 'Installing Homebrew...'
 # piping echo to simulate hitting return in the brew install script

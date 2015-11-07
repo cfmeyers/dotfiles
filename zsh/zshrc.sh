@@ -77,6 +77,8 @@ HISTIGNORE="jrnl *"
 # Data Science #
 # ============ #
 alias conipy="~/anaconda/bin/ipython"
+alias anaipy="~/anaconda/bin/ipython"
+alias anapy="~/anaconda/bin/python"
 
 # ============ #
 # Work Aliases #
