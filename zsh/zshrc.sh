@@ -39,6 +39,7 @@ alias vi="vim"
 # ==================== #
 alias work="cd ~/dev/clubs"
 alias dots="cd ~/dotfiles"
+alias dt="cd ~/Desktop"
 alias secret="vim ~/.secret_config"
 alias scratch="vim ~/scratch.py"
 
@@ -85,6 +86,7 @@ alias anapy="~/anaconda/bin/python"
 # ============ #
 alias run='python manage.py runserver --env mydev'
 alias runforbes='python manage.py runserver --site forbes --env mydev'
+alias runshell='python manage.py shell --env mydev'
 alias rebuild='python manage.py rebuilddb --env mydev'
 alias nt='nosetests --with-id'
 alias fo='nosetests --failed'
