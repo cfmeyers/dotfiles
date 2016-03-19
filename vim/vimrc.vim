@@ -9,7 +9,9 @@ set tags=tags;/
 "ctags -R ~/.virtualenvs/clubs/lib/python2.7/
 set tags+=/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/tags
 set tags+=~/.virtualenvs/clubs/lib/python2.7/tags
-
+map <F8> :TagbarToggle<CR>
+command Tb TagbarToggle
+command TB TagbarToggle
 
 let g:ackprg = 'ag --nogroup --nocolor --column'
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -74,7 +76,8 @@ set background=dark
 " colorscheme vividchalk
 " colorscheme jellybeans
 " colorscheme anderson
-colorscheme base16-ateliercave
+" colorscheme base16-ateliercave
+colorscheme base16-bright
 " colorscheme badwolf
 "json highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
@@ -196,7 +199,7 @@ let g:syntastic_check_on_open=1
 let g:syntastic_javascript_checkers = ['jsxhint']
 "https://coderwall.com/p/ac8ihg/vim-checking-python-code-on-the-fly
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E711,E128,E127,E501,W293,E125,E124,E126'
+let g:syntastic_python_flake8_args='--ignore=E501,E711,E128,E127,E501,W293,E125,E124,E126,E702'
 set statusline+=%F
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

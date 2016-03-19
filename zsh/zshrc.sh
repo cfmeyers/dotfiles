@@ -87,11 +87,20 @@ alias notebook="~/anaconda/bin/ipython notebook"
 alias run='python manage.py runserver --env mydev'
 alias runforbes='python manage.py runserver --site forbes --env mydev'
 alias runshell='python manage.py shell --env mydev'
+alias runcelery='python run_celery.py worker --env mydev '
+alias celery='runcelery'
 alias rebuild='python manage.py rebuilddb --env mydev'
+
 alias nt='echo Started Tests at `date +%k:%M`; nosetests --with-id'
 alias n='nosetests'
 alias fo='nosetests --failed'
 
+alias importvintage='python manage.py import_vintage_attributes /tmp/WineData.csv --env mydev'
+alias regen='python manage.py assets clean --env mydev; python manage.py assets build --env mydev'
+
+alias lcron='ssh collin@54.146.75.138' # (l18-cron)
+alias lweb1='ssh collin@54.197.114.72' # (l18-web-01)
+alias lweb2='ssh collin@54.157.141.44' # (l18-web-02)
 
 # ========== #
 # Ag Aliases #
