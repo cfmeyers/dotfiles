@@ -3,6 +3,7 @@
 
 #symlink dotfiles to home directory
 ln -s ~/dotfiles/vim/vimrc.vim ~/.vimrc
+ln -s ~/dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 ln -s ~/dotfiles/zsh/zshrc.sh ~/.zshrc
 ln -s ~/dotfiles/git/gitconfig ~/.gitconfig
 ln -s ~/dotfiles/git/githelpers ~/.githelpers
@@ -22,6 +23,9 @@ ln -s ~/dotfiles/ctags ~/.ctags
 
 ln -s ~/dotfiles/python/base16-ocean-dark.css ~/.ipython/profile_default/static/custom/custom.css
 ln -s ~/dotfiles/python/custom.js ~/.ipython/profile_default/static/custom/custom.js
+
+ln -s ~/dotfiles/haskell/ghci ~/.ghci
+ln -s ~/dotfiles/ag/agignore ~/.agignore
 
 echo 'Installing Homebrew...'
 # piping echo to simulate hitting return in the brew install script
