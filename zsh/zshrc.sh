@@ -104,6 +104,8 @@ alias tag='ag -G test --pager=less'
 alias tags_clubs_libs='ctags -R -f .virtualenvs/clubs/lib/python2.7/tags .virtualenvs/clubs/lib/python2.7/'
 alias tags_clubs='ctags -R -f ~/dev/clubs/.git/tags ~/dev/clubs/'
 
+alias h='history | grep'
+
 # ===== #
 # rbenv #
 # ===== #
