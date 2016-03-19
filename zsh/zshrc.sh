@@ -40,6 +40,7 @@ alias vi="vim"
 alias work="cd ~/dev/clubs"
 alias dots="cd ~/dotfiles"
 alias dt="cd ~/Desktop"
+alias desk="cd ~/Desktop"
 alias secret="vim ~/.secret_config"
 alias scratch="vim ~/scratch.py"
 
@@ -51,7 +52,6 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"          # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                   # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # Coreutils
 PATH="$HOME/.rbenv/bin:$PATH"                        # RBENV
-# PATH="$PATH:/Users/collin/anaconda/bin"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
 # ======== #
@@ -77,9 +77,9 @@ HISTIGNORE="jrnl *"
 # ============ #
 # Data Science #
 # ============ #
-alias conipy="~/anaconda/bin/ipython"
-alias anaipy="~/anaconda/bin/ipython"
-alias anapy="~/anaconda/bin/python"
+alias aipython="~/anaconda/bin/ipython"
+alias apython="~/anaconda/bin/python"
+alias notebook="~/anaconda/bin/ipython notebook"
 
 # ============ #
 # Work Aliases #

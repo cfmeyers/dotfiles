@@ -163,7 +163,7 @@ set laststatus=2
 " Setup some default ignores
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
-  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+  \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg|hi|o)$',
   \}
 
 " Use the nearest .git directory as the cwd

@@ -23,6 +23,9 @@ ln -s ~/dotfiles/ctags ~/.ctags
 ln -s ~/dotfiles/python/base16-ocean-dark.css ~/.ipython/profile_default/static/custom/custom.css
 ln -s ~/dotfiles/python/custom.js ~/.ipython/profile_default/static/custom/custom.js
 
+ln -s ~/dotfiles/haskell/ghci ~/.ghci
+ln -s ~/dotfiles/ag/agignore ~/.agignore
+
 echo 'Installing Homebrew...'
 # piping echo to simulate hitting return in the brew install script
 echo | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"

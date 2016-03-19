@@ -61,3 +61,10 @@ This puts the tag file in the git directory so it won't be versioned
 #Setting Up SSH Keys
 
 Check out [this](https://developer.github.com/guides/using-ssh-agent-forwarding/) guide to setting up ssh agent forwarding
+
+#Haksell setup
+install haskell by downloading from website
+
+`cabal install ghc-mod`
+
+install `vim2hs` vim plugin for haskell (better syntax highlighting among other things) in `.vim/bundle` with `git clone git@github.com:dag/vim2hs.git`
