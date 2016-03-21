@@ -12,8 +12,8 @@ set tags+=~/.virtualenvs/clubs/lib/python2.7/tags
 map <F8> :TagbarToggle<CR>
 command Tb TagbarToggle
 command TB TagbarToggle
+command TT TagbarToggle
 
-let g:ackprg = 'ag --nogroup --nocolor --column'
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " " BASIC EDITING CONFIGURATION
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -121,8 +121,7 @@ if executable('ag')
 endif
 
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-
+nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 nnoremap <Space> :CtrlP<cr>
 nnoremap <Space><Space> <c-^>
