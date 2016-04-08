@@ -12,6 +12,7 @@
     aa = add --all
     ff = merge --ff-only
     pullff = pull --ff-only
+    pum = pull --ff-only upstream master
     b = branch
 
     r = !GIT_NO_PAGER=1 git l -30
