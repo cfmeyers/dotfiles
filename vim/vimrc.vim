@@ -77,7 +77,8 @@ set background=dark
 " colorscheme jellybeans
 " colorscheme anderson
 " colorscheme base16-ateliercave
-colorscheme base16-bright
+" colorscheme base16-bright
+colorscheme atom-dark-256
 " colorscheme badwolf
 "json highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
@@ -168,8 +169,8 @@ let g:ctrlp_custom_ignore = {
 " Use the nearest .git directory as the cwd
 let g:ctrlp_working_path_mode = 'r'
 
-" set up ctlrp to show more files (20) initially, match from top to bottom
-let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:20,results:20'
+" set up ctlrp to show more files (30) initially, match from top to bottom
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
 
 " Easy bindings for its various modes
 nmap <leader>bb :CtrlPBuffer<cr>
@@ -186,10 +187,87 @@ nnoremap <c-l> <c-w>l
 set splitbelow
 set splitright
  
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+" YouCompleteMe
+" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" NeoComplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#enable_auto_select = 1
+
+" use TAB completion neocomplete
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+
+" NeoComplete and Jedi
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
+
+" all of this to make neocomplete tabbing work with ultisnips
+" inoremap <TAB> {{{1
+" Next menu item, expand snippet, jump to next placeholder or insert literal tab
+let g:UltiSnipsJumpForwardTrigger="<NOP>"
+let g:ulti_expand_or_jump_res = 0
+function! ExpandSnippetOrJumpForwardOrReturnTab()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<TAB>"
+    endif
+endfunction
+
+inoremap <expr> <TAB>
+    \ pumvisible() ? "\<C-n>" :
+    \ "<C-R>=ExpandSnippetOrJumpForwardOrReturnTab()<CR>"
+" snoremap <TAB> {{{1
+" jump to next placeholder otherwise do nothing
+snoremap <buffer> <silent> <TAB>
+    \ <ESC>:call UltiSnips#JumpForwards()<CR>
+
+" inoremap <S-TAB> {{{1
+" previous menu item, jump to previous placeholder or do nothing
+let g:UltiSnipsJumpBackwordTrigger = "<NOP>"
+inoremap <expr> <S-TAB>
+    \ pumvisible() ? "\<C-p>" :
+    \ "<C-R>=UltiSnips#JumpBackwards()<CR>"
+
+" snoremap <S-TAB> {{{1
+" jump to previous placeholder otherwise do nothing
+snoremap <buffer> <silent> <S-TAB>
+    \ <ESC>:call UltiSnips#JumpBackwards()<CR>
+
+let g:UltiSnipsExpandTrigger = "<NOP>"
+let g:ulti_expand_or_jump_res = 0
+inoremap <silent> <CR> <C-r>=<SID>ExpandSnippetOrReturnEmptyString()<CR>
+function! s:ExpandSnippetOrReturnEmptyString()
+    if pumvisible()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<C-y>\<CR>"
+    endif
+    else
+        return "\<CR>"
+endfunction
+
+" END - all of this to make neocomplete tabbing work with ultisnips
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+command Snip UltiSnipsEdit
+
 
 "get rid of autocomment when making newline from comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
