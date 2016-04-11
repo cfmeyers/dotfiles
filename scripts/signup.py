@@ -112,7 +112,7 @@ tell application "Google Chrome"
                     execute javascript jscriptPage2
             end tell
     end tell
-    delay 1
+    delay 2
     tell window 1
             tell active tab
                     execute javascript jscriptPage3
