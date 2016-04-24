@@ -38,7 +38,7 @@ def get_random_adjective():
 
 def make_email(first_name, last_name, adjective):
     params = dict(adj=adjective, first=first_name, last=last_name)
-    return '{adj}.{first}.{last}@example.com'.format(**params)
+    return '{adj}.{first}.{last}@example.com'.format(**params).replace(' ', '')
 
 
 def build_random_person():
@@ -106,7 +106,7 @@ tell application "Google Chrome"
                     execute javascript jscriptPage1
             end tell
     end tell
-    delay 1
+    delay 2
     tell window 1
             tell active tab
                     execute javascript jscriptPage2

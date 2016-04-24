@@ -62,6 +62,7 @@ syntax on
 filetype plugin indent on
 
 let mapleader=","
+let localleader="\\"
 
 set autoread " If a file is changed outside of vim, automatically reload it without asking
 
@@ -80,19 +81,19 @@ set background=dark
 " colorscheme base16-bright
 colorscheme atom-dark-256
 " colorscheme badwolf
+
 "json highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
-
+if exists('$TMUX')
+  let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+  let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+else
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+endif
 
 imap kj <Esc>
-" imap aa @
-" imap uu _
-" imap hh #
-" nnoremap L $
-" vnoremap L $
-" nnoremap H 0
-" vnoremap H 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Make vim split pains work with mouse
@@ -124,23 +125,13 @@ endif
 " bind K to grep word under cursor
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-nnoremap <Space> :CtrlP<cr>
-nnoremap <Space><Space> <c-^>
-nmap <leader>f :CtrlPMRU<cr>
-
-"search views for file
-nnoremap <leader>v :CtrlP clubs/templates/<cr>
-
-"search for coffeescript file
-nnoremap <leader>c :CtrlP clubs/static/coffee/<cr>
-
 "fix copy and paste in OS X
 set clipboard=unnamed
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let test#python#runner = 'nose'
+let test#python#runner = 'pytest'
 let test#python#nose#options = '-s'
 :nnoremap <leader>t :TestLast<cr>
 :nnoremap <leader>a :TestFile<cr>
@@ -172,10 +163,16 @@ let g:ctrlp_working_path_mode = 'r'
 " set up ctlrp to show more files (30) initially, match from top to bottom
 let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
 
-" Easy bindings for its various modes
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap gb :CtrlPMRU<cr>
+nnoremap <Space> :CtrlP<cr>
+nnoremap <Space><Space> <c-^>
+" nmap <leader>f :CtrlPMRU<cr>
+nmap <leader>f :CtrlPBuffer<cr>
+
+"search views for file
+nnoremap <leader>v :CtrlP clubs/templates/<cr>
+
+"search for coffeescript file
+nnoremap <leader>c :CtrlP clubs/static/coffee/<cr>
 
 
 " Move around splits without <c-w>
@@ -310,3 +307,12 @@ autocmd FileType jade set sw=2 sts=2 et
 
 " for use with with Tim Pope's vim-markdown plugin
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" todo.txt
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+command T 10sp /Users/colinmeyers/todo/todo.txt
+nnoremap <leader>l :10sp /Users/colinmeyers/todo/todo.txt<cr>
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/work-til/wiki', 'path_html': '~/work-til/public_html', 'syntax': 'markdown', 'ext': '.md'}]
