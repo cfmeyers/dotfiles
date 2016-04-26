@@ -1,0 +1,36 @@
+Hal Abelson
+Charles Babbage
+John Backus
+Tim Berners-Lee
+Sergey Brin
+Alonzo Church
+Haskell Curry
+Edsger Dijkstra
+Brendan Eich
+Douglas Engelbart
+Martin Fowler
+Grace Hopper
+Bill Joy
+Alan Kay
+Donald Knuth
+Rasmus Lerdorf
+Ada Lovelace
+John McCarthy
+Douglas McIlroy
+Marvin Minsky
+John von Neumann
+Larry Page
+Simon Peyton Jones
+Dennis Ritchie
+Guido van Rossum
+Bruce Schneier
+Adi Shamir
+Claude Shannon
+Richard Stallman
+Guy Steele
+Bjarne Stroustrup
+Gerald Jay Sussman
+Andrew Tanenbaum
+Ken Thompson
+Linus Torvalds
+Larry Wall

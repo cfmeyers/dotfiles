@@ -91,9 +91,10 @@ alias runcelery='python run_celery.py worker --env mydev '
 alias celery='runcelery'
 alias rebuild='python manage.py rebuilddb --env mydev'
 
-alias nt='echo Started Tests at `date +%k:%M`; nosetests --with-id'
+alias nt='echo Started Tests at `date +%k:%M`; nosetests --with-id --logging-filter=ERROR'
 alias n='nosetests'
 alias fo='nosetests --failed'
+alias pt='py.test'
 
 alias importvintage='python manage.py import_vintage_attributes /tmp/WineData.csv --env mydev'
 alias regen='python manage.py assets clean --env mydev; python manage.py assets build --env mydev'
@@ -161,4 +162,50 @@ function unfixredis ()
     git co ~/dev/clubs/clubs/config/common.py;
     echo "redis unfixed";
 
+}
+
+# ================ #
+# todo.txt configs #
+# ================ #
+source /usr/local/Cellar/todo-txt/2.10/etc/bash_completion.d/todo_completion complete -F _todo t
+alias t='/usr/local/Cellar/todo-txt/2.10/bin/todo.sh -d $HOME/todo/todo.cfg'
+
+
+# ================ #
+# fzf stuff        #
+# ================ #
+
+# see https://github.com/junegunn/fzf/wiki/examples
+
+# fbr - checkout git branch (including remote branches)
+fbr() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# fh - repeat history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}
+
+# fkill - kill process
+fkill() {
+  pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+  if [ "x$pid" != "x" ]
+  then
+    kill -${1:-9} $pid
+  fi
+}
+
+# fcs - get git commit sha
+# example usage: git rebase -i `fcs`
+fcs() {
+  local commits commit
+  commits=$(git log --color=always --pretty=oneline --abbrev-commit --reverse) &&
+  commit=$(echo "$commits" | fzf --tac +s +m -e --ansi --reverse) &&
+  echo -n $(echo "$commit" | sed "s/ .*//")
 }
