@@ -5,7 +5,7 @@ bind-key j down
 
 bind-key N prev 
 
-auto-reload yes
+auto-reload no
 reload-time 30
 
 download-full-page yes
