@@ -102,7 +102,9 @@ set ttyfast
 set mouse=a
 " Set this to the name of your terminal that supports mouse codes.
 " Must be one of: xterm, xterm2, netterm, dec, jsbterm, pterm
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -187,11 +189,35 @@ nnoremap <c-l> <c-w>l
 set splitbelow
 set splitright
  
-let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
-let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
+ " <TAB>: completion.
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+        \ <SID>check_back_space() ? "\<TAB>" :
+        \ neocomplete#start_manual_complete()
+  function! s:check_back_space() "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+  endfunction"}}}
+
+" jedi stuff
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+autocmd FileType python setlocal omnifunc=jedi#completions
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#popup_on_dot = 0
+let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
+let g:jedi#usages_command = ""
 "get rid of autocomment when making newline from comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "for syntax highlighting
