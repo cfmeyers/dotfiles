@@ -1,0 +1,41 @@
+session_name: tastingroom
+windows:
+  - window_name: EDITOR
+    panes:
+    -  shell_command:
+        -  work
+        -  workon clubs
+        -  clear
+        -  git st
+  - window_name: REFERENCE
+    panes:
+    -  shell_command:
+        -  work
+        -  workon clubs
+        -  clear
+        -  git st
+  - window_name: SERVER
+    panes:
+    -  shell_command:
+        -  work
+        -  workon clubs
+        -  clear
+        -  git st
+  - window_name: SSH
+    panes:
+    -  shell_command:
+        -  work
+        -  workon clubs
+        -  clear
+        -  git st
+  - window_name: NOTES
+    panes:
+    -  shell_command:
+        - cd ~/work-til
+        - vim
+
+  - window_name: TODO
+    panes:
+    -  shell_command:
+        - cd ~/todo
+        - vim -o done.txt todo.txt

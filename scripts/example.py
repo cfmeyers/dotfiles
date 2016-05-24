@@ -19,11 +19,11 @@ except IndexError:
     site = 'dev'
 
 if site == 'dev':
-    url = 'http://www.dev.tastingroom.com:5000/signup'
+    url = 'http://www.dev.tastingroom.com:5000/signup/email'
 if site == 'qa':
-    url = 'http://www.qa.tastingroom.com/signup'
+    url = 'http://www.qa.tastingroom.com/signup/email'
 if site == 'testo':
-    url = 'http://www.tastingroom.com/signup'
+    url = 'http://www.tastingroom.com/signup/email'
 
 name = random.choice(COMPUTER_SCIENTIST_NAMES)
 adjective = random.choice(ADJECTIVES)
@@ -36,11 +36,13 @@ values = {
     'credit_card_number': '4111111111111111',
     'credit_card_cvv': '123',
     'expiration_year': '2020',
+    'expiration': '04/20',
     'password': 'asdfasdf',
     'url':url,
 }
 
-script = make_template('/Users/colinmeyers/dotfiles/scripts/fragments/signup.applescript', **values)
+# script = make_template('/Users/colinmeyers/dotfiles/scripts/fragments/signup.applescript', **values)
+script = make_template('/Users/colinmeyers/dotfiles/scripts/fragments/survey-flow-signup.applescript', **values)
 run_script(script)
 
 print script

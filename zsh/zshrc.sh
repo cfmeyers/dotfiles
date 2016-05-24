@@ -8,6 +8,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 unsetopt CORRECT #turn off zsh correct prompt
 
+export NO_FORCED_PIP_INSTALL=True
 
 # ====================== #
 # Config Editing Aliases #
