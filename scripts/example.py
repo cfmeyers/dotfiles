@@ -1,6 +1,6 @@
 import random
 import sys
-sys.path.append('/Users/colinmeyers/dev/')
+sys.path.append('/Users/collin/dev/')
 
 from wrapplescript.models import Name, email_from_name, Person
 from wrapplescript.wrapplescript import run_script
@@ -42,7 +42,7 @@ values = {
 }
 
 # script = make_template('/Users/colinmeyers/dotfiles/scripts/fragments/signup.applescript', **values)
-script = make_template('/Users/colinmeyers/dotfiles/scripts/fragments/survey-flow-signup.applescript', **values)
+script = make_template('/Users/collin/dotfiles/scripts/fragments/survey-flow-signup.applescript', **values)
 run_script(script)
 
 print script
