@@ -10,9 +10,7 @@ set tags=tags;/
 set tags+=/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/tags
 set tags+=~/.virtualenvs/clubs/lib/python2.7/tags
 map <F8> :TagbarToggle<CR>
-command Tb TagbarToggle
-command TB TagbarToggle
-command TT TagbarToggle
+command! TB TagbarToggle
 
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " " BASIC EDITING CONFIGURATION
@@ -133,8 +131,9 @@ set clipboard=unnamed
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let test#python#runner = 'pytest'
-let test#python#nose#options = '-s'
+" let test#python#runner = 'pytest'
+let test#python#runner = 'nose'
+let test#python#nose#options = '-s --logging-filter=ERROR'
 :nnoremap <leader>t :TestLast<cr>
 :nnoremap <leader>a :TestFile<cr>
 " :nnoremap <leader>v :TestVisit<cr>
@@ -291,7 +290,7 @@ endfunction
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-command Snip UltiSnipsEdit
+command! Snip UltiSnipsEdit
 
 
 "get rid of autocomment when making newline from comment
@@ -315,6 +314,10 @@ nnoremap ,= mzgg=G`z<CR>
 
 "color line guard
 :set colorcolumn=79
+
+"no color line guard for markdown files
+autocmd FileType markdown set colorcolumn=""
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent Guides
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -338,8 +341,20 @@ let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " todo.txt
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-command T 10sp /Users/colinmeyers/todo/todo.txt
+command! T 10sp /Users/colinmeyers/todo/todo.txt
 nnoremap <leader>l :10sp /Users/colinmeyers/todo/todo.txt<cr>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/work-til/wiki', 'path_html': '~/work-til/public_html', 'syntax': 'markdown', 'ext': '.md'}]
+nnoremap <localleader>p F a+<Esc>
+
+" for gitgutter
+set updatetime=250
+
+" edit vimrc/zshrc and load vimrc bindings
+command! EditVim :vsp $MYVIMRC
+command! EditZsh :vsp ~/.zshrc
+command! Source :source $MYVIMRC
+
+" clear highlighting from search
+nnoremap <return> :noh<cr>

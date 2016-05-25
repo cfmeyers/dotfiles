@@ -1,3 +1,4 @@
+source ~/.secret_config
 # ============== #
 # Prezto Configs #
 # ============== #
@@ -7,6 +8,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 unsetopt CORRECT #turn off zsh correct prompt
 
+export NO_FORCED_PIP_INSTALL=True
 
 # ====================== #
 # Config Editing Aliases #
@@ -99,9 +101,9 @@ alias pt='py.test'
 alias importvintage='python manage.py import_vintage_attributes /tmp/WineData.csv --env mydev'
 alias regen='python manage.py assets clean --env mydev; python manage.py assets build --env mydev'
 
-alias lcron='ssh collin@54.146.75.138' # (l18-cron)
-alias lweb1='ssh collin@54.197.114.72' # (l18-web-01)
-alias lweb2='ssh collin@54.157.141.44' # (l18-web-02)
+alias lcron="ssh collin@$L18CRON" # (l18-cron)
+alias lweb1="ssh collin@$L18WEB1" # (l18-web-01)
+alias lweb2="ssh collin@$L18WEB1" # (l18-web-02)
 
 # ========== #
 # Ag Aliases #

@@ -11,6 +11,9 @@ ln -s ~/dotfiles/nosetests/noserc ~/.noserc
 
 ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
 
+mkdir ~/.tmuxp/
+ln -s ~/dotfiles/tmuxp/tastingroom.yaml ~/.tmuxp/tastingroom.yaml
+
 ln -s ~/dotfiles/newsbeuter/urls ~/.newsbeuter/urls
 ln -s ~/dotfiles/newsbeuter/config ~/.newsbeuter/config
 
