@@ -347,6 +347,8 @@ nnoremap <leader>l :10sp /Users/colinmeyers/todo/todo.txt<cr>
 " vimwiki
 let g:vimwiki_list = [{'path': '~/work-til/wiki', 'path_html': '~/work-til/public_html', 'syntax': 'markdown', 'ext': '.md'}]
 nnoremap <localleader>p F a+<Esc>
+command! DiaryIndex VimwikiDiaryIndex 
+command! DiaryRegen VimwikiDiaryGenerateLinks
 
 " for gitgutter
 set updatetime=250
