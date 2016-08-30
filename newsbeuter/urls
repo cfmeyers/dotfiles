@@ -11,7 +11,6 @@ https://script.googleusercontent.com/macros/echo?user_content_key=XjVKDS2k0K9JqH
 http://thepurdman.com/feed/ "current events"
 http://thepurdman.com/feed.xml "current events"
 http://www.marginalrevolution.com/marginalrevolution/index.rdf "current events"
-http://news.ycombinator.com/rss "Hacker News"
 http://articles.coreyhaines.com/atom.xml "CS Thinkers"
 http://davidad.github.io/atom.xml "CS Thinkers"
 http://raganwald.com/atom.xml "CS Thinkers"
@@ -41,11 +40,9 @@ http://joelgrus.com/feeds/rss.xml "Python"
 http://www.pgbovine.net/pgbovine-rss-feed.xml "Python"
 http://www.dataschool.io/rss/ "Data Science"
 https://www.goodreads.com/review/list_rss/11004626?shelf=read "CS Thinkers"
-<<<<<<< HEAD
 http://adit.io/rss.xml "CS Thinkers"
 http://planet.elm-lang.org/feeds.xml "Elm"
 http://gearbrain.com/feed/ "Friends"
 https://www.alfredapp.com/blog/feed.xml "Alfred Blog"
 https://wincent.com/blog.rss
-=======
->>>>>>> ad4d6b42dd83f8476dd535cd759d070a0aa23d9c
+http://feeds.feedburner.com/glyph "Python"

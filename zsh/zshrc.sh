@@ -54,6 +54,7 @@ PATH="/usr/local/bin:/usr/local/sbin:$PATH"          # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                   # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # Coreutils
 PATH="$HOME/.rbenv/bin:$PATH"                        # RBENV
+PATH="$HOME/scripts:$PATH"                        # my scripts
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
 # ======== #
@@ -93,7 +94,8 @@ alias runcelery='python run_celery.py worker --env mydev '
 alias celery='runcelery'
 alias rebuild='python manage.py rebuilddb --env mydev'
 
-alias nt='echo Started Tests at `date +%k:%M`; nosetests --with-id --logging-filter=ERROR'
+# alias nt='echo Started Tests at `date +%k:%M`; nosetests --with-id --logging-filter=ERROR'
+alias nt='echo Started Tests at `date +%k:%M`; nosetests --with-id --logging-filter=ERROR --ignore-files="test_beats.*"; nosetests --with-id --logging-filter=ERROR clubs/tests/test_beats.py'
 alias n='nosetests'
 alias fo='nosetests --failed'
 alias pt='py.test'
@@ -117,7 +119,7 @@ alias tags_clubs_libs='ctags -R -f .virtualenvs/clubs/lib/python2.7/tags .virtua
 alias tags_clubs='ctags -R -f ~/dev/clubs/.git/tags ~/dev/clubs/'
 
 alias h='history | grep'
-
+alias nyt="echo '\n 127.0.0.1 www.dev.nytwineclub.com'"
 # ===== #
 # rbenv #
 # ===== #

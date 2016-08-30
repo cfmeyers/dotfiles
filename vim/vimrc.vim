@@ -11,7 +11,6 @@ set tags+=/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7
 set tags+=~/.virtualenvs/clubs/lib/python2.7/tags
 map <F8> :TagbarToggle<CR>
 command! TB TagbarToggle
-
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " " BASIC EDITING CONFIGURATION
 " """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -122,8 +121,12 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" bind K to grep word under cursor
-nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" bind leader e to grep word under cursor
+nnoremap <leader><space> :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap <leader>e :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" set Ag to not autojump to results
+ca Ag Ag!
 
 "fix copy and paste in OS X
 set clipboard=unnamed
@@ -166,7 +169,6 @@ let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:30,results:30'
 
 nnoremap <Space> :CtrlP<cr>
 nnoremap <Space><Space> <c-^>
-" nmap <leader>f :CtrlPMRU<cr>
 nmap <leader>f :CtrlPBuffer<cr>
 
 "search views for file
@@ -234,6 +236,13 @@ let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#usages_command = ""
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
+
+
+" If you prefer the Omni-Completion tip window to close when a selection is
+" made, these lines close it on movement in insert mode or when leaving
+" insert mode
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 
 " all of this to make neocomplete tabbing work with ultisnips
@@ -329,7 +338,8 @@ autocmd FileType markdown set colorcolumn=""
 autocmd BufWritePost *.coffee silent make!
 autocmd QuickFixCmdPost * nested cwindow | redraw! 
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
-autocmd FileType jade set sw=2 sts=2 et
+
+" autocmd FileType jade set sw=2 sts=2 et
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown
@@ -346,9 +356,16 @@ nnoremap <leader>l :10sp /Users/colinmeyers/todo/todo.txt<cr>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/work-til/wiki', 'path_html': '~/work-til/public_html', 'syntax': 'markdown', 'ext': '.md'}]
+nnoremap gy :VimwikiMakeYesterdayDiaryNote<cr>
 nnoremap <localleader>p F a+<Esc>
 command! DiaryIndex VimwikiDiaryIndex 
+command! Di VimwikiDiaryIndex 
+command! Index VimwikiDiaryIndex 
 command! DiaryRegen VimwikiDiaryGenerateLinks
+command! Regen VimwikiDiaryGenerateLinks
+
+" enables tab complete in vimwiki
+let vimwiki_table_mappings=0 
 
 " for gitgutter
 set updatetime=250
@@ -357,6 +374,15 @@ set updatetime=250
 command! EditVim :vsp $MYVIMRC
 command! EditZsh :vsp ~/.zshrc
 command! Source :source $MYVIMRC
+nnoremap gt :botright split ~/todo/todo.txt <cr>
 
-" clear highlighting from search
-nnoremap <return> :noh<cr>
+" clear highlighting from search with return
+noremap <return> :noh<cr>
+" preserve original return functionality in quickfix window
+:autocmd BufReadPost quickfix nnoremap <buffer> <CR><CR>
+
+nnoremap vv :vsp <cr>
+
+" set listchars=trail:•,space:·
+set listchars=trail:•,space:␣
+set list

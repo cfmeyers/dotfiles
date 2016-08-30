@@ -47,7 +47,7 @@ In order to use my CAPSLOCK key in tmux (which doesn't appear to have support fo
 
     -  change fn key behavior to ctrl (Change Fn key, select Fn to Control_L
 
-
+*Note*: in order to get this setup to work with an external keyboard, need to set Capslock key to "No Action" for the external keyboard too (dropdown menue in Modifier Keys section).
 #Using Ctags
 
 In your project directory, run
