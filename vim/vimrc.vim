@@ -187,11 +187,6 @@ nnoremap <c-l> <c-w>l
 set splitbelow
 set splitright
  
-" YouCompleteMe
-" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
-" let g:ycm_path_to_python_interpreter = '/usr/bin/python'
-" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 let g:neocomplete#enable_at_startup = 1
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
@@ -213,17 +208,14 @@ if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
 autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#auto_vim_configuration = 0
+" let g:jedi#auto_vim_configuration = 0
 let g:jedi#popup_on_dot = 0
-let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
-let g:jedi#usages_command = ""
+" let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
+" let g:jedi#usages_command = ""
 " NeoComplete
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#enable_auto_select = 1
-
-" use TAB completion neocomplete
-" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
