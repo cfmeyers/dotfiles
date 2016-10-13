@@ -134,9 +134,11 @@ set clipboard=unnamed
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let test#python#runner = 'pytest'
-let test#python#runner = 'nose'
-let test#python#nose#options = '-s --logging-filter=ERROR'
+let test#javascript#runner = 'jasmine'
+let test#python#runner = 'pytest'
+let test#python#pytest#options = '-v'
+" let test#python#runner = 'nose'
+" let test#python#nose#options = '-s --logging-filter=ERROR'
 :nnoremap <leader>t :TestLast<cr>
 :nnoremap <leader>a :TestFile<cr>
 " :nnoremap <leader>v :TestVisit<cr>
@@ -148,9 +150,20 @@ set diffopt+=vertical "for fugitive to always do Gdiff vertically
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " STATUS LINE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" :set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'wombat'
 set laststatus=2
+" only use tagbar extension (remove clutter), see :help airline
+let g:airline_extensions = ['tagbar']
+
+" displays class + method (instead of just method), see :help tagbar-statusline
+let g:airline_section_x = "%{tagbar#currenttag('%s','', 'f')}"
+
+" remove clutter, see :help airline
+let g:airline_section_y = ''
+let g:airline_section_z = ''
+let g:airline_section_warning = ''
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  from https://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -188,11 +201,9 @@ set splitbelow
 set splitright
  
 let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
 let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+let g:neocomplete#enable_auto_select = 1
 
  " <TAB>: completion.
   inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
@@ -207,19 +218,6 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
-autocmd FileType python setlocal omnifunc=jedi#completions
-" let g:jedi#auto_vim_configuration = 0
-let g:jedi#popup_on_dot = 0
-" let g:neocomplete#force_omni_input_patterns.python = '[^. \t]\.\w*'
-" let g:jedi#usages_command = ""
-" NeoComplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#enable_auto_select = 1
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-    let g:neocomplete#force_omni_input_patterns = {}
-endif
 
 " NeoComplete and Jedi
 autocmd FileType python setlocal omnifunc=jedi#completions
@@ -227,8 +225,8 @@ let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#usages_command = ""
+let g:jedi#popup_on_dot = 0
 let g:neocomplete#force_omni_input_patterns.python = '\%([^. \t]\.\|^\s*@\|^\s*from\s.\+import \|^\s*from \|^\s*import \)\w*'
-
 
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
@@ -308,8 +306,9 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_disabled_filetypes=['html']
+let g:syntastic_html_checkers=['']
 
 nnoremap ,= mzgg=G`z<CR>
 
@@ -372,6 +371,13 @@ nnoremap gt :botright split ~/todo/todo.txt <cr>
 noremap <return> :noh<cr>
 " preserve original return functionality in quickfix window
 :autocmd BufReadPost quickfix nnoremap <buffer> <CR><CR>
+
+" fix commandline window (q: and q/) so return selects current line 
+" (instead of noh)
+augroup commandlinewindow
+  autocmd!
+  autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
+augroup END
 
 nnoremap vv :vsp <cr>
 
