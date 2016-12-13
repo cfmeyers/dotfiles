@@ -135,13 +135,13 @@ set clipboard=unnamed
 " TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let test#javascript#runner = 'jasmine'
-let test#python#runner = 'pytest'
-let test#python#pytest#options = '-v'
-" let test#python#runner = 'nose'
-" let test#python#nose#options = '-s --logging-filter=ERROR'
+let test#javascript#jasmine#file_pattern = '.spec\.js'
+" let test#python#runner = 'pytest'
+" let test#python#pytest#options = '-v'
+let test#python#runner = 'nose'
+let test#python#nose#options = '-s --logging-filter=ERROR'
 :nnoremap <leader>t :TestLast<cr>
 :nnoremap <leader>a :TestFile<cr>
-" :nnoremap <leader>v :TestVisit<cr>
 :nnoremap <leader>n :TestNearest<cr>
 
 
@@ -384,3 +384,13 @@ nnoremap vv :vsp <cr>
 " set listchars=trail:•,space:·
 set listchars=trail:•,space:␣
 set list
+
+" select xml text to format and hit ,x
+vmap ,x :!tidy -q -i -xml<CR>
+
+" select json text to format and hit ,j
+vmap ,j :!python -m json.tool<CR>
+
+
+" set indent to two spaces for coffeescript
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
