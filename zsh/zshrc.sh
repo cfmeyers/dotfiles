@@ -43,6 +43,11 @@ alias dots="cd ~/dotfiles"
 alias desk="cd ~/Desktop"
 alias secret="vim ~/.secret_config"
 
+# ============= #
+# Java Settings #
+# ============= #
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_05.jdk/Contents/Home/
+
 # ========= #
 # PATH mods #
 # ========= #
@@ -50,9 +55,12 @@ PATH="/usr/local/share/npm/bin:$PATH"                # NPM
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"          # Homebrew
 PATH="/usr/local/heroku/bin:$PATH"                   # Heroku Toolbelt
 PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # Coreutils
-# PATH="$HOME/.rbenv/bin:$PATH"                        # RBENV
+PATH="$HOME/.rbenv/bin:$PATH"                        # RBENV
 PATH="$HOME/scripts:$PATH"                        # my scripts
+PATH="$PATH:$JAVA_HOME"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
+
+eval "$(rbenv init -)"
 
 # ======== #
 # Settings #

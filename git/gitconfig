@@ -22,4 +22,4 @@
 [merge]
     tool = vimdiff
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/cmeyers/.gitignore
