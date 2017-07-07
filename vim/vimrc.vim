@@ -67,8 +67,8 @@ autocmd FileType ruby set sw=2 sts=2 et
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set t_Co=256 " 256 colors
-set background=dark
+
+" set background=dark
 " colorscheme distinguished
 " colorscheme grb256
 " colorscheme vividchalk
@@ -76,8 +76,19 @@ set background=dark
 " colorscheme anderson
 " colorscheme base16-ateliercave
 " colorscheme base16-bright
-colorscheme atom-dark-256
 " colorscheme badwolf
+" colorscheme atom-dark-256
+
+colorscheme space-vim-dark
+
+
+
+
+" TRUE COLOR IN VIM AND TMUX
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
+
 
 "json highlighting
 autocmd BufNewFile,BufRead *.json set ft=javascript
@@ -134,12 +145,22 @@ set clipboard=unnamed
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " TESTS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! VagrantTransform(cmd) abort
+  let vagrant_project = '/home/deploy/analytics_scripts'
+  " return 'vagrant ssh --command '.shellescape('cd '.vagrant_project.'; /usr/local/bin/'.a:cmd)
+  return 'vagrant ssh --command '.shellescape('cd '.vagrant_project.'; sudo su deploy -c "/usr/local/bin/'.a:cmd.' -p no:cacheprovider"')
+endfunction
+
+" let g:test#custom_transformations = {'vagrant': function('VagrantTransform')}
+" let g:test#transformation = 'vagrant'
+
 let test#javascript#runner = 'jasmine'
 let test#javascript#jasmine#file_pattern = '.spec\.js'
-" let test#python#runner = 'pytest'
-" let test#python#pytest#options = '-v'
-let test#python#runner = 'nose'
-let test#python#nose#options = '-s --logging-filter=ERROR'
+let test#python#runner = 'pytest'
+let test#python#pytest#options = '-v -p no:cacheprovider'
+
+" let test#python#runner = 'nose'
+" let test#python#nose#options = '-s --logging-filter=ERROR'
 :nnoremap <leader>t :TestLast<cr>
 :nnoremap <leader>a :TestFile<cr>
 :nnoremap <leader>n :TestNearest<cr>
@@ -238,82 +259,91 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 " all of this to make neocomplete tabbing work with ultisnips
 " inoremap <TAB> {{{1
 " Next menu item, expand snippet, jump to next placeholder or insert literal tab
-let g:UltiSnipsJumpForwardTrigger="<NOP>"
-let g:ulti_expand_or_jump_res = 0
-function! ExpandSnippetOrJumpForwardOrReturnTab()
-    let snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-        return snippet
-    else
-        return "\<TAB>"
-    endif
-endfunction
+" let g:UltiSnipsJumpForwardTrigger="<NOP>"
+" let g:ulti_expand_or_jump_res = 0
+" function! ExpandSnippetOrJumpForwardOrReturnTab()
+"     let snippet = UltiSnips#ExpandSnippetOrJump()
+"     if g:ulti_expand_or_jump_res > 0
+"         return snippet
+"     else
+"         return "\<TAB>"
+"     endif
+" endfunction
 
-inoremap <expr> <TAB>
-    \ pumvisible() ? "\<C-n>" :
-    \ "<C-R>=ExpandSnippetOrJumpForwardOrReturnTab()<CR>"
+" inoremap <expr> <TAB>
+"     \ pumvisible() ? "\<C-n>" :
+"     \ "<C-R>=ExpandSnippetOrJumpForwardOrReturnTab()<CR>"
 " snoremap <TAB> {{{1
 " jump to next placeholder otherwise do nothing
-snoremap <buffer> <silent> <TAB>
-    \ <ESC>:call UltiSnips#JumpForwards()<CR>
+" snoremap <buffer> <silent> <TAB>
+"     \ <ESC>:call UltiSnips#JumpForwards()<CR>
 
 " inoremap <S-TAB> {{{1
 " previous menu item, jump to previous placeholder or do nothing
-let g:UltiSnipsJumpBackwordTrigger = "<NOP>"
-inoremap <expr> <S-TAB>
-    \ pumvisible() ? "\<C-p>" :
-    \ "<C-R>=UltiSnips#JumpBackwards()<CR>"
+" let g:UltiSnipsJumpBackwordTrigger = "<NOP>"
+" inoremap <expr> <S-TAB>
+"     \ pumvisible() ? "\<C-p>" :
+"     \ "<C-R>=UltiSnips#JumpBackwards()<CR>"
 
 " snoremap <S-TAB> {{{1
 " jump to previous placeholder otherwise do nothing
-snoremap <buffer> <silent> <S-TAB>
-    \ <ESC>:call UltiSnips#JumpBackwards()<CR>
+" snoremap <buffer> <silent> <S-TAB>
+"     \ <ESC>:call UltiSnips#JumpBackwards()<CR>
 
-let g:UltiSnipsExpandTrigger = "<NOP>"
-let g:ulti_expand_or_jump_res = 0
-inoremap <silent> <CR> <C-r>=<SID>ExpandSnippetOrReturnEmptyString()<CR>
-function! s:ExpandSnippetOrReturnEmptyString()
-    if pumvisible()
-    let snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-        return snippet
-    else
-        return "\<C-y>\<CR>"
-    endif
-    else
-        return "\<CR>"
-endfunction
+" let g:UltiSnipsExpandTrigger = "<NOP>"
+" let g:ulti_expand_or_jump_res = 0
+" inoremap <silent> <CR> <C-r>=<SID>ExpandSnippetOrReturnEmptyString()<CR>
+" function! s:ExpandSnippetOrReturnEmptyString()
+"     if pumvisible()
+"     let snippet = UltiSnips#ExpandSnippetOrJump()
+"     if g:ulti_expand_or_jump_res > 0
+"         return snippet
+"     else
+"         return "\<C-y>\<CR>"
+"     endif
+"     else
+"         return "\<CR>"
+" endfunction
 
 " END - all of this to make neocomplete tabbing work with ultisnips
 
 " If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsEditSplit="vertical"
 
-command! Snip UltiSnipsEdit
+" command! Snip UltiSnipsEdit
 
 
 "get rid of autocomment when making newline from comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "for syntax highlighting
-let g:syntastic_check_on_open=1
-let g:syntastic_javascript_checkers = ['jsxhint']
-"https://coderwall.com/p/ac8ihg/vim-checking-python-code-on-the-fly
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_python_flake8_args='--ignore=E501,E711,E128,E127,E501,W293,E125,E124,E126,E702'
-set statusline+=%F
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_disabled_filetypes=['html']
-let g:syntastic_html_checkers=['']
+" SYNTASTIC
+" let g:syntastic_check_on_open=1
+" let g:syntastic_javascript_checkers = ['jsxhint']
+" "https://coderwall.com/p/ac8ihg/vim-checking-python-code-on-the-fly
+" let g:syntastic_python_checkers = ['flake8']
+" let g:syntastic_python_flake8_args='--ignore=E501,E711,E128,E127,E501,W293,E125,E124,E126,E702'
+" set statusline+=%F
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_disabled_filetypes=['html']
+" let g:syntastic_html_checkers=['']
+
+"ALE
+let g:ale_sign_column_always = 1
+let g:ale_linters = {
+\   'python': ['flake8'],
+\}
+
 
 nnoremap ,= mzgg=G`z<CR>
 
 "color line guard
-:set colorcolumn=79
+set colorcolumn=100
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 "no color line guard for markdown files
 autocmd FileType markdown set colorcolumn=""
@@ -394,3 +424,24 @@ vmap ,j :!python -m json.tool<CR>
 
 " set indent to two spaces for coffeescript
 autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE (from Gary Bernhardt's dot files)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>R :call RenameFile()<cr>
+
+
+""""""""""""""""""""""""""""""""""""
+" Abbreviations (poor-man's snippets
+""""""""""""""""""""""""""""""""""""
+iabbrev pdb import pdb; pdb.set_trace()

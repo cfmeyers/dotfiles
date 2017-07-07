@@ -27,11 +27,11 @@ alias celar="clear"
 alias c='pygmentize -O style=monokai -f console256 -g'
 alias disable_ethernet="sudo ifconfig en0 down"
 alias enable_ethernet="sudo ifconfig en0 up"
-alias ls='ls -F' # show slashes for directories.
+alias ls='ls -F --color=auto' # show slashes for directories.
 alias history='history 0' 
 alias chrome='open -a "Google Chrome"'
 alias cd..="cd .."
-alias cd...="cd ../.."
+alias cd..="cd ../.."
 alias cd....="cd ../../.."
 alias vi="vim"
 
@@ -58,6 +58,7 @@ PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # Coreutils
 PATH="$HOME/.rbenv/bin:$PATH"                        # RBENV
 PATH="$HOME/scripts:$PATH"                        # my scripts
 PATH="$PATH:$JAVA_HOME"
+PATH="$PATH:/usr/local/vertica/bin"
 MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH" # Manual pages
 
 eval "$(rbenv init -)"
@@ -96,6 +97,7 @@ alias tag='ag -G test --pager=less'
 
 alias h='history | grep'
 
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault_pass.txt
 # if  test "$HOST" = "Collins-MacBook-Air.local" || test "$HOST" = "Collins-Air.home"  || test "$HOST" = "Collins-Air.fios-router.home"; then
 #     # =================
 #     # if personal computer
@@ -109,6 +111,17 @@ alias h='history | grep'
 #     printf '%s\n' "on work computer"
 #     source ~/dotfiles/zsh/work_computer.sh
 # fi
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
+
+
+# =============== #
+# Python settings #
+# =============== #
+alias vi="export PYTHONDONTWRITEBYTECODE=1; vim"
+
 
 # ========= #
 # Functions #
